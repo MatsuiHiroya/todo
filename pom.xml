@@ -6,11 +6,12 @@
 		<groupId>com.giffing.wicket.spring.boot.starter</groupId>
 		<artifactId>wicket-spring-boot-starter-parent</artifactId>
 		<version>2.1.7</version>
-		<relativePath/>
+		<!--version>2.3.3.RELEASE</version-->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.prmn</groupId>
-	<artifactId>todo</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.example</groupId>
+	<artifactId>wsbp</artifactId>
+	<packaging>war</packaging>
 	<name>todo</name>
 	<description>Todo project for Spring Boot</description>
 
@@ -24,6 +25,7 @@
 	</properties>
 
 	<dependencies>
+		<!-- Wicket-Spring-Bootを使う -->
 		<dependency>
 			<groupId>com.giffing.wicket.spring.boot.starter</groupId>
 			<artifactId>wicket-spring-boot-starter</artifactId>
