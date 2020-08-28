@@ -6,21 +6,26 @@
 		<groupId>com.giffing.wicket.spring.boot.starter</groupId>
 		<artifactId>wicket-spring-boot-starter-parent</artifactId>
 		<version>2.1.7</version>
+		<!--version>2.3.3.RELEASE</version-->
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.prmn</groupId>
-	<artifactId>todo</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>wsbp</artifactId>
+	<packaging>war</packaging>
 	<name>todo</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Todo project for Spring Boot</description>
 
 	<properties>
 		<java.version>11</java.version>
+		<!-- プロジェクトでは基本的にUTF-8を使う -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- 実行形式ファイル名につける日時の形式を指定する -->
 		<maven.build.timestamp.format>yyyyMMdd-HHmmss</maven.build.timestamp.format>
 	</properties>
 
 	<dependencies>
+		<!-- Wicket-Spring-Bootを使う -->
 		<dependency>
 			<groupId>com.giffing.wicket.spring.boot.starter</groupId>
 			<artifactId>wicket-spring-boot-starter</artifactId>
@@ -77,21 +82,21 @@
 				</configuration>
 			</plugin>
 		</plugins>
-	</build>
 
-	<resources>
-		<resource>
-			<directory>src/main/resources</directory>
-		</resource>
-		<resource>
-			<directory>src/main/java</directory>
-			<includes>
-				<include>**</include>
-			</includes>
-			<excludes>
-				<exclude>**/*.java</exclude>
-			</excludes>
-		</resource>
-	</resources>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+			</resource>
+			<resource>
+				<directory>src/main/java</directory>
+				<includes>
+					<include>**</include>
+				</includes>
+				<excludes>
+					<exclude>**/*.java</exclude>
+				</excludes>
+			</resource>
+		</resources>
+	</build>
 
 </project>
