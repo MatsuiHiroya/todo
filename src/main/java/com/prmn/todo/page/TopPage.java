@@ -5,7 +5,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.wicketstuff.annotation.mount.MountPath;
 
 @WicketHomePage
-@MountPath("Home")
+@MountPath("Top")
 public class TopPage extends WebPage {
 
     public TopPage() {
