@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
+body {
+    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,Arial,Verdana,"ＭＳ Ｐゴシック","MS P Gothic",sans-serif,serif,cursive,fantasy,monospace;
+    line-height: 150%;
+    letter-spacing: .03em;
+    color: #333;
+}
+body {
+    font-size: 13px;
+}
+body {
+    margin: 0;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    background-color: #fff;
+}
+
+body {
+    display: block;
+    margin: 8px;
+}
+
+
+
 #head2 {
     color: #fff;
     border: 1px solid #CCC;
@@ -43,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
     color: inherit;
     text-rendering: optimizelegibility;
 }
-user agent stylesheet
+
 h1 {
     display: block;
     font-size: 2em;
@@ -68,18 +93,20 @@ h1 {
     margin-bottom: 0;
 }
 
+div {
+    display: block;
+}
 
-.mainMenu {
+
+div.mainMenu {
     height: 44px;
+    background-color: #CCCCCC;
     border-left: 1px solid #A3CEDC;
     border-right: 1px solid #A3CEDC;
-    background-color: #CCCCCC;
-    margin: 0;
 }
 div.mainMenu>ul.tabMenu {
     margin: 0px;
 }
-
 ul, ol, li, dl, dt, dd {
     list-style-type: none;
     list-style-position: outside;
@@ -99,14 +126,49 @@ ul {
     padding-inline-start: 40px;
 }
 
-li {
+
+div.mainMenu>ul.tabMenu>li {
     float: left;
     margin: 4px 0 0 5px;
     text-align: center;
 }
+.w70 {
+    width: 70px;
+}
+ul, ol, li, dl, dt, dd {
+    list-style-type: none;
+    list-style-position: outside;
+}
+li {
+    line-height: 20px;
+}
 
-.mainMenu{
-    margin: 0px;
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+div.mainMenu>ul.tabMenu>li.w70 a {
+    /*background: url(../image/hrad_navi_w70.png) no-repeat 0 7px;*/
+}
+div.mainMenu>ul.tabMenu>li>a {
+    display: block;
+    color: #FFF;
+    padding: 10px 0 8px 0;
+    text-decoration: none;
+}
+a {
+    color: #08c;
+    text-decoration: none;
+}
+
+div.mainMenu p {
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    float: right;
+    margin: 9px;
+    display: inline;
 }
 
 
