@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 #head2 {
     color: #fff;
     border: 1px solid #CCC;
@@ -55,6 +53,62 @@ h1 {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+
+.navbar-fixed-top {
+    min-width: 960px;
+}
+.navbar-fixed-top {
+    top: 0;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    margin-bottom: 0;
+}
+
+
+.mainMenu {
+    height: 44px;
+    border-left: 1px solid #A3CEDC;
+    border-right: 1px solid #A3CEDC;
+    background-color: #CCCCCC;
+    margin: 0;
+}
+div.mainMenu>ul.tabMenu {
+    margin: 0px;
+}
+
+ul, ol, li, dl, dt, dd {
+    list-style-type: none;
+    list-style-position: outside;
+}
+ul, ol {
+    padding: 0;
+    margin: 0 0 10px 25px;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+li {
+    float: left;
+    margin: 4px 0 0 5px;
+    text-align: center;
+}
+
+.mainMenu{
+    margin: 0px;
+}
+
 
 
 
