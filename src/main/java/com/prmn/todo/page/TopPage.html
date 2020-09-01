@@ -7,40 +7,63 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <wicket:link>
         <link rel="stylesheet" type="text/css" href="css/defaultStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultBody.css">
     </wicket:link>
 </head>
 <body>
-<header>
-    <div class="navbar-fixed-top none_print">
-        <div class="newHeader" id="head2">
-            <h1>公立千歳科学技術大学 ポータルサイト</h1>
+<div class="wrapper">
+    <header>
+        <div class="navbar-fixed-top none_print">
+            <div class="newHeader" id="head2">
+                <h1>公立千歳科学技術大学 ポータルサイト</h1>
+            </div>
+            <div class="mainMenu">
+                <ul class="tabMenu">
+                    <li class="w70"><a>MyPage</a></li>
+                    <li class="w50"><a>連絡</a></li>
+                    <li class="w50"><a>予定</a></li>
+                    <li class="w50"><a>授業</a></li>
+                    <li class="w70"><a>イベント</a></li>
+                    <li class="w50"><a>SNS</a></li>
+                    <li class="w60"><a>配布物</a></li>
+                    <li class="w70"><a>給与明細</a></li>
+                    <li class="w80"><a>アンケート</a></li>
+
+                    <p class="logout"><a>ログアウト</a></p>
+                    <p class="setting"><a>設定</a></p>
+                </ul>
+            </div>
         </div>
-        <div class="mainMenu">
-            <ul class="tabMenu">
-                <li class="w70"> <a>MyPage</a> </li>
-                <li class="w50"> <a>連絡</a> </li>
-                <li class="w50"> <a>予定</a> </li>
-                <li class="w50"> <a>授業</a> </li>
-                <li class="w70"> <a>イベント</a> </li>
-                <li class="w50"> <a>SNS</a> </li>
-                <li class="w60"> <a>配布物</a> </li>
-                <li class="w70"> <a>給与明細</a> </li>
-                <li class="w80"> <a>アンケート</a> </li>
-                
-                <p class="logout"></p>
-                <p class="setting"></p>
-            </ul>
+    </header>
+
+    <div class="mainBody">
+        <div class="container-fluid">
+            <div class="row fluid">
+                <div class="span3">
+                    <div class="sidebar">
+                        <h2 class="submenutt1">MyPage</h2>
+                        <dl class="myPageCategory">
+                            <dt class="submenuSub">大学サイト</dt>
+                            <dd> <a target="mail"></a> </dd>
+                            <dd> <a target="solomon"></a> </dd>
+                            <dd> <a target="hp"></a> </dd>
+                            <dd> <a target="_blank"></a> </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</header>
 
-
-<div class = "container">
+    <div class="footer none_print" id="footer">
+        <address>
+            ©公立千歳科学技術大学
+        </address>
+    </div>
 
 </div>
 
 </body>
-
 
 
 </html>
