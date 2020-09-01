@@ -100,7 +100,7 @@ div {
 
 div.mainMenu {
     height: 44px;
-    background-color: #CCCCCC;
+    background: url(../images/head_navi.jpg) repeat-x 0 0;
     border-left: 1px solid #A3CEDC;
     border-right: 1px solid #A3CEDC;
 }
@@ -149,7 +149,7 @@ li {
 }
 
 div.mainMenu>ul.tabMenu>li.w70 a {
-    /*background: url(../image/hrad_navi_w70.png) no-repeat 0 7px;*/
+    background: url(../images/hrad_navi_w70.png) no-repeat 0 7px;
 }
 div.mainMenu>ul.tabMenu>li>a {
     display: block;
@@ -162,6 +162,30 @@ a {
     text-decoration: none;
 }
 
+div.mainMenu>ul.tabMenu>li.w50 {
+    background: url(../images/hrad_navi_w50.png) no-repeat 0 7px;
+}
+
+.w50 {
+    width: 50px;
+}
+
+div.mainMenu>ul.tabMenu>li.w60 {
+    background: url(../images/hrad_navi_w60.png) no-repeat 0 7px;
+}
+
+.w60 {
+    width: 60px;
+}
+
+div.mainMenu>ul.tabMenu>li.w80 {
+    background: url(../images/hrad_navi_w80.png) no-repeat 0 7px;
+}
+
+.w80 {
+    width: 80px;
+}
+
 div.mainMenu p {
     height: 28px;
     line-height: 28px;
@@ -170,6 +194,10 @@ div.mainMenu p {
     margin: 9px;
     display: inline;
 }
+
+
+
+
 
 
 
