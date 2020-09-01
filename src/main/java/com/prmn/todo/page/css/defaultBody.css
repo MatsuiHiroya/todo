@@ -115,6 +115,7 @@
     font-size: 117%;
     font-weight: bold;
 }
+
 .submenuttl {
     position: relative;
     height: 35px;
@@ -130,6 +131,7 @@
     background: linear-gradient(#8ed2e1,#2ea7c4);
     -pie-background: linear-gradient(#8ed2e1,#2ea7c4);
 }
+
 h2 {
     font-size: 31.5px;
 }
