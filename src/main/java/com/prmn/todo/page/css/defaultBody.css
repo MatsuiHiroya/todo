@@ -23,12 +23,12 @@
 .container-fluid {
      min-width: 960px;
  }
-/*
+
 @media (max-width: 767px) {
     .container-fluid {
         padding: 0;
     }
-}*/
+}
 
 .container-fluid {
     padding-right: 20px;
