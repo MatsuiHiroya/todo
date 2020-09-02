@@ -1,10 +1,10 @@
 @charset "UTF-8";
-/*
+
 @media (max-width: 979px) {
     div.mainBody {
         padding: 0px 0px 24px 0px;
     }
-}*/
+}
 
 .mainBody {
     width: 100%;
