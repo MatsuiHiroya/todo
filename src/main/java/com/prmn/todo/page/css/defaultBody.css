@@ -20,7 +20,9 @@
     }
 }
 
-
+.container-fluid {
+     min-width: 960px;
+ }
 /*
 @media (max-width: 767px) {
     .container-fluid {
