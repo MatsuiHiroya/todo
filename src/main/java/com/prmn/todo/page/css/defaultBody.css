@@ -230,3 +230,21 @@ a:-webkit-any-link {
     text-decoration: underline;
 }
 
+.sidebar dl dd a img {
+    margin: 4px 0px 4px 0px;
+}
+
+img {
+    max-width: none;
+}
+img {
+    width: auto\9;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+
+
