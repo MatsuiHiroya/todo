@@ -196,3 +196,15 @@ ul, ol, li, dl, dt, dd {
     list-style-position: outside;
 }
 
+dd {
+    margin-left: 10px;
+}
+
+dt, dd {
+    line-height: 20px;
+}
+
+dd {
+    display: block;
+    margin-inline-start: 40px;
+}
