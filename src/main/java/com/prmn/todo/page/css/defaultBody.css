@@ -1,10 +1,10 @@
 @charset "UTF-8";
-
+/*
 @media (max-width: 979px) {
     div.mainBody {
         padding: 0px 0px 24px 0px;
     }
-}
+}*/
 
 .mainBody {
     width: 100%;
@@ -13,7 +13,7 @@
     border-bottom: 8px solid #F4F4F4;
 }
 
-@media (max-width: 979px) {
+@media (min-width: 980px) {
     .container-fluid {
         padding-left: 0;
         padding-right: 0;
@@ -23,11 +23,17 @@
 .container-fluid {
     min-width: 960px;
 }
-
+/*
 @media (max-width: 767px) {
     .container-fluid {
         padding: 0;
     }
+}*/
+
+.container-fluid {
+    padding-right: 20px;
+    padding-left: 20px;
+    *zoom: 1;
 }
 
 .container-fluid {
@@ -36,7 +42,7 @@
     *zoom: 1;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1200px) {
     .row-fluid {
         width: 100%;
     }
@@ -47,18 +53,19 @@
     *zoom: 1;
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1200px) {
     .container-fluid > .row-fluid > .span3 {
         width: 23.404255317%;
         float: left;
     }
 }
-
-.row-fluid [class*="span"]:first-child {
-    margin-left: 0;
+@media (min-width: 1200px){
+    .row-fluid [class*="span"]:first-child {
+        margin-left: 0;
+    }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 1200px) {
     [class*="span"], .uneditable-input[class*="span"], .row-fluid [class*="span"] {
         display: block;
         float: none;
@@ -69,32 +76,38 @@
         box-sizing: border-box;
     }
 }
-
-.row-fluid .span3 {
-    width: 23.404255319148934%;
-    *width: 23.351063829787233%;
+@media (min-width: 1200px) {
+    .row-fluid .span3 {
+        width: 23.404255319148934%;
+        *width: 23.351063829787233%;
+    }
 }
 
-.row-fluid [class*="span"] {
-    display: block;
-    float: left;
-    width: 100%;
-    min-height: 30px;
-    margin-left: 2.127659574468085%;
-    *margin-left: 2.074468085106383%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+@media (min-width: 1200px) {
+    .row-fluid [class*="span"] {
+        display: block;
+        float: left;
+        width: 100%;
+        min-height: 30px;
+        margin-left: 2.127659574468085%;
+        *margin-left: 2.074468085106383%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+}
+@media (min-width: 1200px) {
+    .span3 {
+        width: 220px;
+    }
 }
 
-.span3 {
-    width: 220px;
-}
-
-[class*="span"] {
-    float: left;
-    min-height: 1px;
-    margin-left: 20px;
+@media (min-width: 1200px) {
+    [class*="span"] {
+        float: left;
+        min-height: 1px;
+        margin-left: 20px;
+    }
 }
 
 .sidebar {
