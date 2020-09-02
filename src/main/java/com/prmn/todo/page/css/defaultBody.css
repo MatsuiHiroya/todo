@@ -154,6 +154,12 @@ h2 {
     border: 3px solid #A3CEDC;
     background: #FFF;
 }
+
+ul, ol, li, dl, dt, dd {
+    list-style-type: none;
+    list-style-position: outside;
+}
+
 dl {
     margin-bottom: 20px;
 }
@@ -246,5 +252,10 @@ img {
     -ms-interpolation-mode: bicubic;
 }
 
+.sidebar dl.myPageCategory:after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
 
