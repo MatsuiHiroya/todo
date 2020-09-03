@@ -79,7 +79,7 @@
     background: -o-linear-gradient(#b6b9c2,#484d58);
     background: linear-gradient(#b6b9c2,#484d58);
     -pie-background: linear-gradient(#b6b9c2,#484d58);
-<!--behavior: url(/portal2/js/PIE.htc); -->
+    <!--behavior: url(/portal2/js/PIE.htc); -->
 }
 
 h3 {
@@ -224,4 +224,34 @@ div.content .panel.class dl dt {
 div.content .panel.class dl.questionnaire dt {
     padding: 0 10px 0 32px;
     background: url(../images/main_news_icon03.jpg) no-repeat 0 0;
+}
+
+div.content .panel p.ttl {
+    padding: 10px 10px 10px 20px;
+    background: #F2F5F8;
+    border-bottom: 1px dotted #CCC;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+div.content .panel.details .panelBody {
+    margin: 5px 14px;
+}
+
+div.content .panel.details .panelBody p {
+    padding: 7px 8px 8px 8px;
+}
+
+div.content .panel.details .panelBody p {
+    padding: 10px 8px 10px 8px;
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
