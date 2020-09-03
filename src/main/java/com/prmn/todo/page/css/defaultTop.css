@@ -191,12 +191,6 @@ dd {
     margin-left: 10px;
 }
 
-
-dd {
-    display: block;
-    margin-inline-start: 40px;
-}
-
 a {
     color: #08c;
     text-decoration: none;
