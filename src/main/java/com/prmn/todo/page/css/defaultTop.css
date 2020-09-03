@@ -111,7 +111,7 @@ h3 {
 
 div.content .panel_bottom_bg {
     padding: 0 0 6px 0;
-    <!--background: url(../image/main_panel_bg.jpg) repeat-x 0 bottom; -->
+    background: url(../images/main_panel_bg.jpg) repeat-x 0 bottom;
 }
 
 div.content .panel.class {
@@ -125,7 +125,7 @@ div.content .panel {
     border-top: none;
 }
 
-clear {
+.clear {
     overflow: hidden;
     _zoom: 1;
 }
@@ -157,7 +157,7 @@ dl {
 
 div.content .panel.class dl.notice dt {
     padding: 0 10px 0 38px;
-    <!-- background: url(../image/main_news_icon01.jpg) no-repeat 0 0; -->
+    background: url(../images/main_news_icon01.jpg) no-repeat 0 0;
 }
 
 div.content .panel.class dl dt {
@@ -166,11 +166,6 @@ div.content .panel.class dl dt {
     float: left;
     font-weight: bold;
     border-right: 2px solid #A3CEDC;
-}
-
-ul, ol, li, dl, dt, dd {
-    list-style-type: none;
-    list-style-position: outside;
 }
 
 dt {
@@ -191,20 +186,48 @@ div.content .panel.class dl dd {
     padding: 0 5px 0 0;
 }
 
-ul, ol, li, dl, dt, dd {
-    list-style-type: none;
-    list-style-position: outside;
-}
 
 dd {
     margin-left: 10px;
 }
 
-dt, dd {
-    line-height: 20px;
-}
 
 dd {
     display: block;
     margin-inline-start: 40px;
+}
+
+a {
+    color: #08c;
+    text-decoration: none;
+}
+
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+div.content .panel.class dl dd span {
+    font-size: 167%;
+    font-weight: bold;
+    padding: 0 3px 0 5px;
+}
+
+div.content .panel.class dl.schedule dt {
+    padding: 0 10px 0 28px;
+    background: url(../images/main_news_icon02.jpg) no-repeat 0 0;
+}
+
+div.content .panel.class dl dt {
+    height: 36px;
+    line-height: 36px;
+    float: left;
+    font-weight: bold;
+    border-right: 2px solid #A3CEDC;
+}
+
+div.content .panel.class dl.questionnaire dt {
+    padding: 0 10px 0 32px;
+    background: url(../images/main_news_icon03.jpg) no-repeat 0 0;
 }
