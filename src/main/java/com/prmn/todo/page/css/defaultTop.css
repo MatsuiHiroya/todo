@@ -247,11 +247,3 @@ div.content .panel.details .panelBody p {
 div.content .panel.details .panelBody p {
     padding: 10px 8px 10px 8px;
 }
-
-p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-}
