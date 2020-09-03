@@ -1,69 +1,5 @@
 @charset "UTF-8";
 
-@media (min-width: 1200px) {
-    .row-fluid .span9 {
-        width: 74.35897435897436%;
-        *width: 74.30578286961266%;
-    }
-}
-
-@media (min-width: 1200px) {
-    .row-fluid [class*="span"] {
-        display: block;
-        float: left;
-        width: 100%;
-        min-height: 30px;
-        margin-left: 2.564102564102564%;
-        *margin-left: 2.5109110747408616%;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-    }
-}
-
-.row-fluid .span9 {
-    width: 200.46808510638297%;
-    *width: 74.41489361702126%;
-}
-
-.row-fluid [class*="span"] {
-    display: block;
-    float: left;
-    width: 100%;
-    min-height: 30px;
-    margin-left: 2.127659574468085%;
-    *margin-left: 2.074468085106383%;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-}
-
-@media (min-width: 1200px) {
-    .span9 {
-        width: 870px;
-    }
-}
-
-@media (min-width: 1200px) {
-    [class*="span"] {
-        float: left;
-        min-height: 1px;
-        margin-left: 30px;
-    }
-}
-
-.span9 {
-    width: 700px;
-}
-
-[class*="span"] {
-    float: left;
-    min-height: 1px;
-    margin-left: 20px;
-}
-
-
-/*
 @media (max-width: 767px) {
     .container-fluid > .row-fluid > .span9 {
         float: left;
@@ -109,11 +45,12 @@
     float: left;
     min-height: 1px;
     margin-left: 20px;
-}*/
+}
 
 .content {
     min-width: 760px;
 }
+
 
 
 .content h3 {
@@ -124,7 +61,6 @@
     font-weight: bold;
     text-indent: 20px;
 }
-
 .mainttl2 {
     height: 35px;
     color: #fff;
@@ -136,15 +72,14 @@
     -webkit-border-top-left-radius: 10px;
     -webkit-border-top-right-radius: 10px;
     background: #484d58;
-    background: -webkit-gradient(linear, left top, left bottom, from(#b6b9c2), to(#484d58));
-    background: -webkit-linear-gradient(#b6b9c2, #484d58);
-    background: -moz-linear-gradient(#b6b9c2, #484d58);
-    background: -ms-linear-gradient(#b6b9c2, #484d58);
-    background: -o-linear-gradient(#b6b9c2, #484d58);
-    background: linear-gradient(#b6b9c2, #484d58);
-    -pie-background: linear-gradient(#b6b9c2, #484d58);
-<!-- behavior: url(/portal2/js/PIE.htc);
--->
+    background: -webkit-gradient(linear,left top,left bottom,from(#b6b9c2),to(#484d58));
+    background: -webkit-linear-gradient(#b6b9c2,#484d58);
+    background: -moz-linear-gradient(#b6b9c2,#484d58);
+    background: -ms-linear-gradient(#b6b9c2,#484d58);
+    background: -o-linear-gradient(#b6b9c2,#484d58);
+    background: linear-gradient(#b6b9c2,#484d58);
+    -pie-background: linear-gradient(#b6b9c2,#484d58);
+<!--behavior: url(/portal2/js/PIE.htc); -->
 }
 
 h3 {
@@ -254,12 +189,6 @@ div.content .panel.class dl dd {
 
 dd {
     margin-left: 10px;
-}
-
-
-dd {
-    display: block;
-    margin-inline-start: 40px;
 }
 
 a {
