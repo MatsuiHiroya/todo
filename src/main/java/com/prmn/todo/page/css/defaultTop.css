@@ -79,7 +79,7 @@
     background: -o-linear-gradient(#b6b9c2,#484d58);
     background: linear-gradient(#b6b9c2,#484d58);
     -pie-background: linear-gradient(#b6b9c2,#484d58);
-    <!--behavior: url(/portal2/js/PIE.htc); -->
+<!--behavior: url(/portal2/js/PIE.htc); -->
 }
 
 h3 {
@@ -189,12 +189,6 @@ div.content .panel.class dl dd {
 
 dd {
     margin-left: 10px;
-}
-
-
-dd {
-    display: block;
-    margin-inline-start: 40px;
 }
 
 a {
