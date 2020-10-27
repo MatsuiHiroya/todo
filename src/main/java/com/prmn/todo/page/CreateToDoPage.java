@@ -1,4 +1,9 @@
 package com.prmn.todo.page;
 
-public class CreateToDoPage {
+import org.apache.wicket.markup.html.WebPage;
+import org.wicketstuff.annotation.mount.MountPath;
+
+
+@MountPath("CreateToDo")
+public class CreateToDoPage extends WebPage {
 }

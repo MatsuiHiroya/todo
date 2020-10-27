@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:wicket="http://wicket.apache.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>公立千歳科学技術大学 ポータルサイト/ToDo編集</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <wicket:link>
+        <link rel="stylesheet" type="text/css" href="css/defaultHead.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultBody.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultTop.css">
+        <!--link rel="stylesheet" type="text/css" href="css/portal.css"-->
+    </wicket:link>
 </head>
-<body>
 
+<body>
+<div class="wrapper">
+    <header>
+        <div class="navbar-fixed-top none_print">
+            <div class="newHeader" id="head2">
+                <h1>公立千歳科学技術大学 ポータルサイト</h1>
+            </div>
+            <div class="mainMenu">
+                <ul class="tabMenu">
+                    <li class="w70"><a>MyPage</a></li>
+                    <li class="w50"><a>連絡</a></li>
+                    <li class="w50"><a>予定</a></li>
+                    <li class="w50"><a>授業</a></li>
+                    <li class="w70"><a>イベント</a></li>
+                    <li class="w50"><a>SNS</a></li>
+                    <li class="w60"><a>配布物</a></li>
+                    <li class="w70"><a>給与明細</a></li>
+                    <li class="w80"><a>アンケート</a></li>
+                    <li class="w60"><a>ToDo</a></li>
+
+                    <p class="logout"><a>ログアウト</a></p>
+                    <p class="setting"><a>設定</a></p>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="mainBody">
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3 none_print">
+                    <div class="sidebar">
+                        <h2 class="submenuttl">スケジュール</h2>
+                        <dl class="category">
+                            <dt class="submenuSub">ToDo</dt>
+                            <dd><a href="./MonthlyScheduleViewer" class="arrow">新規作成</a></dd>
+                            <dd><a href="./AppointmentViewer" class="arrow">編集</a></dd>
+                            <dd><a href="./InvalidScheduleViewer" class="arrow">設定</a></dd>
+                        </dl>
+                        <dl class="category">
+                            <dd><a href="./ScheduleAppointer" class="arrow">月間の予定</a></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div><!-- end of row-fluid -->
+        </div><!-- end of container-fluid -->
+
+    </div>
+
+</div>
 </body>
 </html>
