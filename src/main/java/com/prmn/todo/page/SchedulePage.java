@@ -1,4 +1,8 @@
 package com.prmn.todo.page;
 
-public class SchedulePage {
+import org.apache.wicket.markup.html.WebPage;
+import org.wicketstuff.annotation.mount.MountPath;
+
+@MountPath("Schedule")
+public class SchedulePage extends WebPage {
 }
