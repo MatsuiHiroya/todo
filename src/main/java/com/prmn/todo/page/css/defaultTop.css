@@ -247,3 +247,10 @@ div.content .panel.details .panelBody p {
 div.content .panel.details .panelBody p {
     padding: 10px 8px 10px 8px;
 }
+
+.sidebar dl dd a.arrow {
+    display: block;
+    padding: 3px 0 3px 25px;
+    margin: 0px;
+    background: url(../images/submenu_icon_arrow.jpg) no-repeat 9px 7px;
+}
