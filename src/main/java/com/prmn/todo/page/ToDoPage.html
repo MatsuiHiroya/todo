@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/defaultHead.css">
         <link rel="stylesheet" type="text/css" href="css/defaultBody.css">
         <link rel="stylesheet" type="text/css" href="css/defaultTop.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultCalender.css">
         <!--link rel="stylesheet" type="text/css" href="css/portal.css"-->
     </wicket:link>
 </head>
@@ -52,6 +53,322 @@
                             <dd><a href="#" wicket:id="toCreateToDoPage" class="arrow">新規作成</a></dd>
                             <dd><a href="#" wicket:id="toConfigurationToDoPage" class="arrow">設定</a></dd>
                         </dl>
+                    </div>
+                </div>
+
+                <div class="span9 w95p_print">
+                    <div class="content">
+                        <h3 class="mainttl2">
+                            あなたの月間予定
+                        </h3>
+                        <div class="panel_bottom_bg">
+                            <div class="panel schedule">
+                                <p class="ttl">
+                                    あなたの予定を１ヶ月づつ表示します。新しい予定を追加したい時は、日付をクリックしてください。
+                                </p>
+                                <div class="panelBody">
+                                    <p class="bg">
+                                        背景色と種類：
+                                        <span class="research">研究</span>
+                                        &nbsp;
+                                        <span class="lesson">授業</span>
+                                        &nbsp;
+                                        <span class="office">事務</span>
+                                        &nbsp;
+                                        <span class="academy">学会</span>
+                                        &nbsp;
+                                        <span class="meeting">会議</span>
+                                        &nbsp;
+                                        <span class="businesstrip">出張</span>
+                                        &nbsp;
+                                        <span class="club">部活</span>
+                                        &nbsp;
+                                        <span class="officehour">オフィスアワー</span>
+                                        &nbsp;
+                                        <span class="etcetera">その他</span>
+                                    </p>
+                                    <div class="none_print" style="margin-left: 20px;">
+                                        <button type="button" class="btn" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) { window.location.href='./naZmXD4VC-tZ25auMOJFlBqaiM3Xa_gIyybpqGFyouxPQ0R-9MRSHOFLdo8JLxF3ryE_mSe6UMSJmlOxVbGP2-CAEPR0uQYtyVEbP40QSrw2jjxv2Svg5SPMKsow8s35/naZ86/mSe5e'; } ;return false">
+                                            一括削除
+                                        </button>
+                                    </div>
+                                    <div>
+                                        <div class="mag14px" id="id1ea">
+                                            <!-- <div class="date">
+                                                <p class="year" wicket:id="caption">caption</p>
+                                                <p class="page">
+                                                    <span>
+                                                        <a href="#" wicket:id="lastMonthLink">&lt;&lt;</a>
+                                                    </span>
+                                                    <span>
+                                                        <a href="#" wicket:id="currentMonthLink">
+                                                            <wicket:message key="currentMonth" />
+                                                        </a>
+                                                    </span>
+                                                    <span>
+                                                        <a href="#" wicket:id="nextMonthLink">&gt;&gt;</a>
+                                                    </span>
+                                                </p>
+                                            </div> -->
+                                            <div>
+                                                <div class="date">
+                                                    <p class="year" id="id1eb"><span id="id1e2">2020/09</span></p>
+                                                    <p class="page">
+					<span>
+						<a href="javascript:;" id="id1e3">&lt;&lt;</a><span style="display:none;" class="wicket-ajax-indicator" id="id1e3--ajax-indicator"><img src="./J1xqS9kRluc4xKHfbPEgcQzL9s9cz7a2gTZ6tNDMqMKscZxSVNC49uuLALAeX9X9UqGq0LjAuXlDRBx11X2H8_q23TWGUCvkb49fw5faAJb4PbvSvNdbvDYAn-njv8l820mJbQHcxlP7vfmfr9q1JOzNY7zXuyVF/J1x30/8l873/FJ1fc" alt=""></span>
+					</span>
+                                                        <span>
+						<a href="javascript:;" id="id1e5">
+							今月
+						</a><span style="display:none;" class="wicket-ajax-indicator" id="id1e5--ajax-indicator"><img src="./J1xqS9kRluc4xKHfbPEgcQzL9s9cz7a2gTZ6tNDMqMKscZxSVNC49uuLALAeX9X9UqGq0LjAuXlDRBx11X2H8_q23TWGUCvkb49fw5faAJb4PbvSvNdbvDYAn-njv8l820mJbQHcxlP7vfmfr9q1JOzNY7zXuyVF/J1x30/8l873/FJ1fc" alt=""></span>
+					</span>
+                                                        <span>
+						<a href="javascript:;" id="id1e4">&gt;&gt;</a><span style="display:none;" class="wicket-ajax-indicator" id="id1e4--ajax-indicator"><img src="./J1xqS9kRluc4xKHfbPEgcQzL9s9cz7a2gTZ6tNDMqMKscZxSVNC49uuLALAeX9X9UqGq0LjAuXlDRBx11X2H8_q23TWGUCvkb49fw5faAJb4PbvSvNdbvDYAn-njv8l820mJbQHcxlP7vfmfr9q1JOzNY7zXuyVF/J1x30/8l873/FJ1fc" alt=""></span>
+					</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <table cellpadding="0" cellspacing="0" border="0">
+                                                <thead>
+                                                <tr>
+                                                    <th class="center mainMypageTable">日</th>
+                                                    <th class="center mainMypageTable">月</th>
+                                                    <th class="center mainMypageTable">火</th>
+                                                    <th class="center mainMypageTable">水</th>
+                                                    <th class="center mainMypageTable">木</th>
+                                                    <th class="center mainMypageTable">金</th>
+                                                    <th class="center mainMypageTable">土</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <tr>
+                                                    <td class="rest">
+                                                        <div class="dateNumber">
+                                                            <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-0-dailyData-0-scheduleAddLink"><span>30</span> </a>
+                                                        </div>
+
+                                                    </td><td class="out">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-0-dailyData-1-scheduleAddLink"><span>31</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-0-dailyData-2-scheduleAddLink"><span>1</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-0-dailyData-3-scheduleAddLink"><span>2</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-0-dailyData-4-scheduleAddLink"><span>3</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-0-dailyData-5-scheduleAddLink"><span>4</span> </a>
+                                                    </div>
+
+                                                </td><td class="rest">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-0-dailyData-6-scheduleAddLink"><span>5</span> </a>
+                                                    </div>
+
+                                                </td>
+                                                </tr><tr>
+                                                    <td class="rest">
+                                                        <div class="dateNumber">
+                                                            <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-1-dailyData-0-scheduleAddLink"><span>6</span> </a>
+                                                        </div>
+
+                                                    </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-1-dailyData-1-scheduleAddLink"><span>7</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-1-dailyData-2-scheduleAddLink"><span>8</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-1-dailyData-3-scheduleAddLink"><span>9</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-1-dailyData-4-scheduleAddLink"><span>10</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-1-dailyData-5-scheduleAddLink"><span>11</span> </a>
+                                                    </div>
+
+                                                </td><td class="rest">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-1-dailyData-6-scheduleAddLink"><span>12</span> </a>
+                                                    </div>
+
+                                                </td>
+                                                </tr><tr>
+                                                    <td class="rest">
+                                                        <div class="dateNumber">
+                                                            <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-2-dailyData-0-scheduleAddLink"><span>13</span> </a>
+                                                        </div>
+
+                                                    </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-2-dailyData-1-scheduleAddLink"><span>14</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-2-dailyData-2-scheduleAddLink"><span>15</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-2-dailyData-3-scheduleAddLink"><span>16</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-2-dailyData-4-scheduleAddLink"><span>17</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-2-dailyData-5-scheduleAddLink"><span>18</span> </a>
+                                                    </div>
+
+                                                </td><td class="rest">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-2-dailyData-6-scheduleAddLink"><span>19</span> </a>
+                                                    </div>
+
+                                                </td>
+                                                </tr><tr>
+                                                    <td class="rest">
+                                                        <div class="dateNumber">
+                                                            <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-3-dailyData-0-scheduleAddLink"><span>20</span> </a>
+                                                        </div>
+
+                                                    </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-3-dailyData-1-scheduleAddLink"><span>21</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-3-dailyData-2-scheduleAddLink"><span>22</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-3-dailyData-3-scheduleAddLink"><span>23</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-3-dailyData-4-scheduleAddLink"><span>24</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-3-dailyData-5-scheduleAddLink"><span>25</span> </a>
+                                                    </div>
+
+                                                </td><td class="rest">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-3-dailyData-6-scheduleAddLink"><span>26</span> </a>
+                                                    </div>
+
+                                                </td>
+                                                </tr><tr>
+                                                    <td class="rest">
+                                                        <div class="dateNumber">
+                                                            <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-4-dailyData-0-scheduleAddLink"><span>27</span> </a>
+                                                        </div>
+
+                                                    </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-4-dailyData-1-scheduleAddLink"><span>28</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-4-dailyData-2-scheduleAddLink"><span>29</span> </a>
+                                                    </div>
+
+                                                </td><td>
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-4-dailyData-3-scheduleAddLink"><span>30</span> </a>
+                                                    </div>
+
+                                                </td><td class="out">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-4-dailyData-4-scheduleAddLink"><span>1</span> </a>
+                                                    </div>
+
+                                                </td><td class="out">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-4-dailyData-5-scheduleAddLink"><span>2</span> </a>
+                                                    </div>
+
+                                                </td><td class="rest">
+                                                    <div class="dateNumber">
+                                                        <a href="./MonthlyScheduleViewer?1831478629-1.ILinkListener-calendarPanel-calendarWMC-weeklyData-4-dailyData-6-scheduleAddLink"><span>3</span> </a>
+                                                    </div>
+
+                                                </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <div>
+                                                <div class="date">
+                                                    <p class="year" id="id1ec"><span id="id1e6">2020/09</span></p>
+                                                    <p class="page">
+					<span>
+						<a href="javascript:;" id="id1e7">&lt;&lt;</a><span style="display:none;" class="wicket-ajax-indicator" id="id1e7--ajax-indicator"><img src="./J1xqS9kRluc4xKHfbPEgcQzL9s9cz7a2gTZ6tNDMqMKscZxSVNC49uuLALAeX9X9UqGq0LjAuXlDRBx11X2H8_q23TWGUCvkb49fw5faAJb4PbvSvNdbvDYAn-njv8l820mJbQHcxlP7vfmfr9q1JOzNY7zXuyVF/J1x30/8l873/FJ1fc" alt=""></span>
+					</span>
+                                                        <span>
+						<a href="javascript:;" id="id1e9">
+							今月
+						</a><span style="display:none;" class="wicket-ajax-indicator" id="id1e9--ajax-indicator"><img src="./J1xqS9kRluc4xKHfbPEgcQzL9s9cz7a2gTZ6tNDMqMKscZxSVNC49uuLALAeX9X9UqGq0LjAuXlDRBx11X2H8_q23TWGUCvkb49fw5faAJb4PbvSvNdbvDYAn-njv8l820mJbQHcxlP7vfmfr9q1JOzNY7zXuyVF/J1x30/8l873/FJ1fc" alt=""></span>
+					</span>
+                                                        <span>
+						<a href="javascript:;" id="id1e8">&gt;&gt;</a><span style="display:none;" class="wicket-ajax-indicator" id="id1e8--ajax-indicator"><img src="./J1xqS9kRluc4xKHfbPEgcQzL9s9cz7a2gTZ6tNDMqMKscZxSVNC49uuLALAeX9X9UqGq0LjAuXlDRBx11X2H8_q23TWGUCvkb49fw5faAJb4PbvSvNdbvDYAn-njv8l820mJbQHcxlP7vfmfr9q1JOzNY7zXuyVF/J1x30/8l873/FJ1fc" alt=""></span>
+					</span>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <!-- 			<div class="date">
+                                                            <p class="year" wicket:id="caption2">caption</p>
+                                                            <p class="page">
+                                                                <span>
+                                                                    <a href="#" wicket:id="lastMonthLink2">&lt;&lt;</a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#" wicket:id="currentMonthLink2">
+                                                                        <wicket:message key="currentMonth" />
+                                                                    </a>
+                                                                </span>
+                                                                <span>
+                                                                    <a href="#" wicket:id="nextMonthLink2">&gt;&gt;</a>
+                                                                </span>
+                                                            </p>
+                                                        </div> -->
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div><!-- end of row-fluid -->

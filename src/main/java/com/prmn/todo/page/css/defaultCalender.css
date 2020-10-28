@@ -1,0 +1,287 @@
+@charset "UTF-8";
+
+div.content .panel.schedule .panelBody p.bg {
+    margin: 10px 0 10px 0;
+    text-indent: 20px;
+}
+
+div.content .panel.schedule .panelBody p.bg span {
+    padding: 3px 5px 3px 5px;
+}
+
+div.content .panel.schedule .panelBody .research {
+    color: #404F6A;
+    background: #E4E8EF;
+    border: 1px solid #7083A8;
+}
+
+div.content .panel.schedule .panelBody .lesson {
+    color: #406A00;
+    background: #EEFFD5;
+    border: 1px solid #6A0;
+}
+
+div.content .panel.schedule .panelBody .office {
+    color: #51512F;
+    background: #EFEFE4;
+    border: 1px solid #898951;
+}
+
+div.content .panel.schedule .panelBody .academy {
+    color: #763476;
+    background: #F2E1F2;
+    border: 1px solid #949;
+}
+
+div.content .panel.schedule .panelBody .meeting {
+    color: #224388;
+    background: #DDE6F7;
+    border: 1px solid #36C;
+}
+
+div.content .panel.schedule .panelBody .businesstrip {
+    color: #9E3C0C;
+    background: #FCE3D8;
+    border: 1px solid #DD5511;
+}
+
+div.content .panel.schedule .panelBody .club {
+    color: #6A5800;
+    background: #FFF8D5;
+    border: 1px solid #D6AE00;
+}
+
+div.content .panel.schedule .panelBody .officehour {
+    color: #407F7F;
+    background: #CDFFFF;
+    border: 1px solid #A4CCCC;
+}
+
+div.content .panel.schedule .panelBody .etcetera {
+    color: #666;
+    background: #E9E9E9;
+    border: 1px solid #666;
+}
+
+.btn:first-child {
+    *margin-left: 0;
+}
+
+button.btn, input[type="submit"].btn {
+    *padding-top: 3px;
+    *padding-bottom: 3px;
+}
+
+.btn {
+    display: inline-block;
+    *display: inline;
+    padding: 4px 12px;
+    margin-bottom: 0;
+    *margin-left: .3em;
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+    vertical-align: middle;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    *background-color: #e6e6e6;
+    background-image: -moz-linear-gradient(top,#fff,#e6e6e6);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#fff),to(#e6e6e6));
+    background-image: -webkit-linear-gradient(top,#fff,#e6e6e6);
+    background-image: -o-linear-gradient(top,#fff,#e6e6e6);
+    background-image: linear-gradient(to bottom,#fff,#e6e6e6);
+    background-repeat: repeat-x;
+    border: 1px solid #ccc;
+    *border: 0;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    border-bottom-color: #b3b3b3;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    *zoom: 1;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2),0 1px 2px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+}
+
+input, button, select, textarea {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+label, input, button, select, textarea {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+}
+
+label, select, button, input[type="button"], input[type="reset"], input[type="submit"], input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+button, input {
+    *overflow: visible;
+    line-height: normal;
+}
+
+button, input, select, textarea {
+    margin: 0;
+    font-size: 100%;
+    vertical-align: middle;
+}
+
+.mag14px {
+    margin: 14px;
+}
+
+div.content .panel.schedule div.date {
+    margin: 0 auto 0 auto;
+    height: 40px;
+    line-height: 40px;
+    background: #64C1D5;
+    position: relative;
+}
+
+div.content .panel.schedule div.date p.year {
+    margin: 0px 0 0px 0px;
+    padding: 2px 0px 0px 0px;
+    /* float: left; */
+    color: #FFF;
+    font-weight: bold;
+    /* display: inline; */
+    /* position: absolute; */
+    text-align: center;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+div.content .panel.schedule div.date p.page {
+    text-align: center;
+    line-height: 18px;
+}
+
+div.content .panel.schedule div.date p.page a {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 114%;
+    margin: 0 5px 0 5px;
+}
+
+a {
+    color: #08c;
+    text-decoration: none;
+}
+
+img {
+    max-width: none;
+}
+
+img {
+    width: auto\9;
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
+}
+
+div.content .panel.schedule table {
+    margin: 0 auto 0 auto;
+    border-right: 1px solid #A3CEDC;
+}
+
+table {
+    width: 100%;
+}
+
+table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+div.content .panel.schedule table th {
+    padding: 5px 0px;
+}
+
+.mainMypageTable {
+    height: 27px;
+    border: 1px solid #a3cedc;
+    text-align: center;
+    background: #c0dee8;
+    background: -webkit-gradient(linear,left top,left bottom,from(#e8f3f5),to(#c0dee8));
+    background: -webkit-linear-gradient(#e8f3f5,#c0dee8);
+    background: -moz-linear-gradient(#e8f3f5,#c0dee8);
+    background: -ms-linear-gradient(#e8f3f5,#c0dee8);
+    background: -o-linear-gradient(#e8f3f5,#c0dee8);
+    background: linear-gradient(#e8f3f5,#c0dee8);
+    -pie-background: linear-gradient(#e8f3f5,#c0dee8);
+    /*behavior: url(/portal2/js/PIE.htc);*/
+}
+
+.center {
+    text-align: center;
+}
+
+div.content .panel.schedule table td.rest {
+    background: #FDECE3;
+}
+
+div.content .panel.schedule .panelBody td {
+    width: 100px;
+}
+
+div.content .panel.schedule table td {
+    vertical-align: top;
+    background: #FFF;
+    border-left: 1px solid #A3CEDC;
+    border-bottom: 1px solid #A3CEDC;
+    height: 75px;
+}
+
+.rest {
+    background: #F36161;
+    color: #a33131;
+}
+
+div.content .panel.schedule table td.out {
+    background: #F4F4F4;
+}
+
+
+
+table td {
+    vertical-align: middle;
+}
+
+div.content .panel.schedule table td div.dateNumber {
+    margin: 5px 0 5px 5px;
+}
+
+div.content .panel.schedule table td div {
+    margin: 0 0 0 0;
+    padding: 3px;
+}
+
+div.content .panel.schedule table td div.dateNumber span {
+    font-size: 117%;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
