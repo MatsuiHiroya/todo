@@ -14,5 +14,7 @@ public class ToDoPage extends WebPage {
         add(toCreateToDoLink);
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage",ConfigurationToDoPage.class);
         add(toConfigurationToDoLink);
+        var toEditToDoLink = new BookmarkablePageLink<>("toEditToDoPage",EditToDoPage.class);
+        add(toEditToDoLink);
     }
 }
