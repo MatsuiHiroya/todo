@@ -254,3 +254,67 @@ div.content .panel.details .panelBody p {
     margin: 0px;
     background: url(../images/submenu_icon_arrow.jpg) no-repeat 9px 7px;
 }
+
+/*ここから*/
+/**/
+
+@media (min-width: 980px) {
+    .container-fluid {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.container-fluid {
+    min-width: 960px;
+}
+
+@media (min-width: 1200px) {
+    .row-fluid {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .row-fluid [class*="span"]:first-child {
+        margin-left: 0;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .row-fluid .span3 {
+        width: 23.076923076923077%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .row-fluid [class*="span"] {
+        display: block;
+        float: left;
+        min-height: 30px;
+    }
+}
+
+/**/
+
+@media (min-width: 1200px) {
+    .row-fluid .span9 {
+        width: 74.35897435897436%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .row-fluid [class*="span"] {
+        display: block;
+        float: left;
+        min-height: 30px;
+        /*margin-left: 2.564102564102564%;*/
+        margin-left: 2.2%;
+        box-sizing: border-box;
+    }
+}
+
+.content {
+    min-width: 760px;
+}
