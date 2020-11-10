@@ -7,14 +7,20 @@ import org.wicketstuff.annotation.mount.MountPath;
 //ToDo確認
 @MountPath("ConfirmToDo")
 public class ConfirmToDoPage extends WebPage {
+
     public ConfirmToDoPage() {
-        var toTopLink = new BookmarkablePageLink<>("toTopPage",TopPage.class);
+        //ヘッダーのボタンからTopPageへの移動
+        var toTopLink = new BookmarkablePageLink<>("toTopPage", TopPage.class);
         add(toTopLink);
-        var toToDoLink = new BookmarkablePageLink<>("toToDoPage",ToDoPage.class);
+        //ヘッダーのボタンからToDoPageへの移動
+        var toToDoLink = new BookmarkablePageLink<>("toToDoPage", ToDoPage.class);
         add(toToDoLink);
-        var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage",CreateToDoPage.class);
+        //左側のスケジュール部分からToDo作成ページへの移動
+        var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage", CreateToDoPage.class);
         add(toCreateToDoLink);
-        var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage",ConfigurationToDoPage.class);
+        //左側のスケジュール部分からToDo設定ページへの移動
+        var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage", ConfigurationToDoPage.class);
         add(toConfigurationToDoLink);
     }
+
 }

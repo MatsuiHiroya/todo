@@ -9,6 +9,8 @@
         <link rel="stylesheet" type="text/css" href="css/defaultHead.css">
         <link rel="stylesheet" type="text/css" href="css/defaultBody.css">
         <link rel="stylesheet" type="text/css" href="css/defaultTop.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultCalender.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultConfirm.css">
         <!--link rel="stylesheet" type="text/css" href="css/portal.css"-->
     </wicket:link>
 </head>
@@ -44,22 +46,81 @@
 
         <div class="container-fluid">
             <div class="row-fluid">
+
                 <div class="span3 none_print">
                     <div class="sidebar">
                         <h2 class="submenuttl">スケジュール</h2>
                         <dl class="category">
                             <dt class="submenuSub">ToDo</dt>
-                            <dd><a href="./MonthlyScheduleViewer" class="arrow">新規作成</a></dd>
-                            <dd><a href="./InvalidScheduleViewer" class="arrow">設定</a></dd>
+                            <dd><a href="#" wicket:id="toCreateToDoPage" class="arrow">新規作成</a></dd>
+                            <dd><a href="#" wicket:id="toConfigurationToDoPage" class="arrow">設定</a></dd>
                         </dl>
-                        <dl class="category">
-                            <dd><a href="./ScheduleAppointer" class="arrow">月間の予定</a></dd>
-                        </dl>
+                    </div>
+                </div>
+
+                <div class="span9 w95p_print">
+                    <div class="content">
+                        <h3 class="mainttl2">ToDo詳細画面</h3>
+                        <div class="panel_bottom_bg">
+                            <div class="panel details">
+                                <p class="ttl">あなたが作成したToDoは編集・削除することができます。</p>
+                                <div class="panelBody simple">
+                                    <div class="save" id="id57">
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn" id="id56">削除</button>
+                                        <button type="button" class="btn" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) { window.location.href='../Yx97i1gkGCHh4uaLud_HPgHNlb93DmWlzMA08-Clv9NufdySsfGgt3wgLs5b7tCJsQd2xq2NOB0/Yx969'; } ;return false">戻る</button>
+                                    </div>
+                                    <table class="layout">
+                                        <tbody><tr>
+                                            <td>
+                                                <div class="nonHead"></div>
+                                                <table class="orig" cellpadding="0" cellspacing="0" border="0">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th class="orig" colspan="2">ToDo</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="orig w100">日時</th>
+                                                        <td class="orig"><span>2020/09/10（火） 10:00</span>&nbsp;〜&nbsp;<span>12:15</span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="orig w100">種類</th>
+                                                        <td class="orig">授業</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="orig w100">件名</th>
+                                                        <td class="orig">ソフトウェア工学　第2回　レポート1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="orig w100">詳細</th>
+                                                        <td class="orig">
+                                                            <p>まとめシートをグループごとに書いて提出する。</p>
+                                                            <p>手直しは下のまとめ部分をやる。</p>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td class="w20"></td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div><!-- end of row-fluid -->
         </div><!-- end of container-fluid -->
 
+    </div>
+
+    <div class="footer none_print" id="footer">
+        <address>
+            ©&nbsp;公立千歳科学技術大学
+            &nbsp;Powered&nbsp;by&nbsp;CIST-Portal&nbsp;Ver,2.6.1f
+        </address>
     </div>
 
 </div>
