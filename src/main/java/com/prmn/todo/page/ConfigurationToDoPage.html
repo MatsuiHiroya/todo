@@ -9,6 +9,7 @@
         <link rel="stylesheet" type="text/css" href="css/defaultHead.css">
         <link rel="stylesheet" type="text/css" href="css/defaultBody.css">
         <link rel="stylesheet" type="text/css" href="css/defaultTop.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultConfiguration.css">
         <!--link rel="stylesheet" type="text/css" href="css/portal.css"-->
     </wicket:link>
 </head>
@@ -50,8 +51,57 @@
                         <dl class="category">
                             <dt class="submenuSub">ToDo</dt>
                             <dd><a href="#" wicket:id="toCreateToDoPage" class="arrow">新規作成</a></dd>
-                            <dd><a class="arrow">設定</a></dd>
                         </dl>
+                    </div>
+                </div>
+                <div class="span9 w95p_print">
+                    <div class="content">
+                        <h3 class="mainttl2">すべてのToDoに共通する設定</h3>
+                        <div class="panel_bottom_bg">
+                            <div class="panel details">
+                                <p class="ttl">全てのToDo機能で有効となる共通の設定を行います。</p>
+                                <form id="id50" method="post"
+                                      action="../lD9C9pnl9dmRvhDw7dddoVfNCF82X_YSidwwIzUQJ-ffOOi2w1BCGd5tq8qEQAx_4ysfCtnIMM4/lD9d0">
+                                    <div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"
+                                         class="hidden-fields"><input type="hidden" name="id50_hf_0" id="id50_hf_0">
+                                    </div>
+                                    <div class="panelBody simple">
+                                        <div class="nonHead">TopPageに締め切りから何日前までのToDoを表示できるかを設定できます</div>
+                                        <table cellpadding="0" cellspacing="0" border="0" class="orig">
+                                            <tbody>
+                                            <tr>
+                                                <td class="orig vtop" style="width: 100px">
+                                                    <label class="check_lb">
+                                                        <input type="radio" name="notification" value="on">
+                                                        <span>締め切り</span>&nbsp;
+                                                        <select class="w120" name="deadLine">
+                                                            <option selected="selected" value="0">当日まで</option>
+                                                            <option value="1">1日前まで</option>
+                                                            <option value="2">2日前まで</option>
+                                                            <option value="3">3日前まで</option>
+                                                            <option value="4">4日前まで</option>
+                                                            <option value="5">5日前まで</option>
+                                                            <option value="6">6日前まで</option>
+                                                            <option value="7">1週間前まで</option>
+                                                            <option value="14">2週間前まで</option>
+                                                        </select>
+                                                        &nbsp;のToDo通知をON&nbsp;
+                                                    </label>
+                                                    <label class="check_lb">
+                                                        <input type="radio" name="notification" value="off">
+                                                        <span>ToDo通知をOFF</span>
+                                                    </label>
+                                                    <button type="submit" class="btn" name="notificationButton"
+                                                            id="id35">変更
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div><!-- end of row-fluid -->
