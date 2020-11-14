@@ -278,8 +278,21 @@ div.content .panel.schedule table td div.dateNumber span {
     font-weight: bold;
 }
 
+.garbageTodo{
+    float: right;
+}
+/*
+.lesson{
+    z-index: 1;
+    position: relative;
+}
 
-
+.editButton{
+    z-index: 2;
+    position: relative;
+    top: 0;
+    left: 50%;
+}*/
 
 
 

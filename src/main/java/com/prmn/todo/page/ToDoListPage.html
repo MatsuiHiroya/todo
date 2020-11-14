@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org">
+<head>
+    <meta charset="UTF-8">
+    <title>公立千歳科学技術大学 ポータルサイト/ToDo</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <wicket:link>
+        <link rel="stylesheet" type="text/css" href="css/defaultHead.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultBody.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultTop.css">
+        <link rel="stylesheet" type="text/css" href="css/defaultToDoList.css">
+        <!--link rel="stylesheet" type="text/css" href="css/portal.css"-->
+    </wicket:link>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="navbar-fixed-top none_print">
+            <div class="newHeader" id="head2">
+                <h1>公立千歳科学技術大学 ポータルサイト</h1>
+            </div>
+            <div class="mainMenu">
+                <ul class="tabMenu">
+                    <li class="w70"><a href="#" wicket:id="toTopPage">MyPage</a></li>
+                    <li class="w50"><a>連絡</a></li>
+                    <li class="w50"><a>予定</a></li>
+                    <li class="w50"><a>授業</a></li>
+                    <li class="w70"><a>イベント</a></li>
+                    <li class="w50"><a>SNS</a></li>
+                    <li class="w60"><a>配布物</a></li>
+                    <li class="w70"><a>給与明細</a></li>
+                    <li class="w80"><a>アンケート</a></li>
+                    <li class="w60"><a>ToDo</a></li>
+
+                    <p class="logout"><a>ログアウト</a></p>
+                    <p class="setting"><a>設定</a></p>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div class="mainBody">
+
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3 none_print">
+                    <div class="sidebar">
+                        <h2 class="submenuttl">スケジュール</h2>
+                        <dl class="category">
+                            <dt class="submenuSub">ToDo</dt>
+                            <dd><a href="#" wicket:id="toCreateToDoPage" class="arrow">新規作成</a></dd>
+                            <dd><a href="#" wicket:id="toEditToDoPage" class="arrow">仮編集</a></dd>
+                            <dd><a href="#" wicket:id="toConfigurationToDoPage" class="arrow">設定</a></dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="span9 w95p_print">
+                    <div class="content">
+                        <h3 class="mainttl2">
+                            あなたの月間予定
+                        </h3>
+                        <div class="panel_bottom_bg">
+                            <div class="panel schedule">
+                                <p class="ttl">
+                                    あなたの予定を１ヶ月づつ表示します。新しい予定を追加したい時は、日付をクリックしてください。
+                                </p>
+                                <div class="panelBody">
+                                    <!--p class="bg">
+                                        背景色と種類：
+                                        <span class="research">研究</span>
+                                        &nbsp;
+                                        <span class="lesson">授業</span>
+                                        &nbsp;
+                                        <span class="office">事務</span>
+                                        &nbsp;
+                                        <span class="academy">学会</span>
+                                        &nbsp;
+                                        <span class="meeting">会議</span>
+                                        &nbsp;
+                                        <span class="businesstrip">出張</span>
+                                        &nbsp;
+                                        <span class="club">部活</span>
+                                        &nbsp;
+                                        <span class="officehour">オフィスアワー</span>
+                                        &nbsp;
+                                        <span class="etcetera">その他</span>
+                                    </p-->
+                                    <div class="none_print" style="margin-left: 20px;">
+
+                                        <button type="submit" class="btn">
+                                            <wicket:link><img src="images/plus_symbol.png"></wicket:link>
+                                        </button>
+
+                                        <div class="todoListDelete">
+                                            <button type="submit" class="btn">
+                                                一括削除
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div>
+
+                                        <li class="todoList">
+                                            ToDoの名前  ToDoの期限<br>
+                                            ToDoの内容(1行目)<br>
+                                            ToDoの内容(2行目)
+                                            <div class="ToDoListButton">
+
+                                                <form wicket:id="editToDoForm">
+                                                    <button wicket:id="toEditToDoButton" class="btn">
+                                                        <wicket:link>
+                                                            <img src="images/pen_icon_32px.png">
+                                                        </wicket:link>
+                                                    </button>
+
+                                                    <button wicket:id="deleteToDoButton" class="btn">
+                                                        <wicket:link>
+                                                            <img src="images/garbage_can_32px.png">
+                                                        </wicket:link>
+                                                    </button>
+                                                </form>
+
+
+
+
+                                            </div>
+                                        </li>
+
+                                        <li class="todoList">
+                                            ToDoの名前  ToDoの期限<br>
+                                            ToDoの内容(1行目)<br>
+                                            ToDoの内容(2行目)
+                                            <div class="ToDoListButton">
+                                                <button type="submit" class="btn">
+                                                    <wicket:link>
+                                                        <img src="images/pen_icon_32px.png">
+                                                    </wicket:link>
+                                                </button>
+
+                                                <button type="submit" class="btn">
+                                                    <wicket:link>
+                                                        <img src="images/garbage_can_32px.png">
+                                                    </wicket:link>
+                                                </button>
+                                            </div>
+                                        </li>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- end of row-fluid -->
+        </div><!-- end of container-fluid -->
+    </div>
+</div>
+</body>
+</html>
