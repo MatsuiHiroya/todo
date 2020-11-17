@@ -89,9 +89,13 @@
                                     </p-->
                                     <div class="none_print" style="margin-left: 20px;">
 
-                                        <button type="submit" class="btn">
-                                            <wicket:link><img src="images/plus_symbol.png"></wicket:link>
-                                        </button>
+                                        <form wicket:id="toCreateToDoForm">
+                                            <button wicket:id="toCreateToDoButton" class="btn">
+                                                <wicket:link>
+                                                    <img src="images/plus_symbol.png">
+                                                </wicket:link>
+                                            </button>
+                                        </form>
 
                                         <div class="todoListDelete">
                                             <button type="submit" class="btn">

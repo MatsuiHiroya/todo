@@ -18,6 +18,15 @@ public class ToDoListPage extends WebPage {
         var toEditToDoLink = new BookmarkablePageLink<>("toEditToDoPage", EditToDoPage.class);
         add(toEditToDoLink);
 
+        var toCreateToDoForm = new Form<>("toCreateToDoForm");
+        add(toCreateToDoForm);
+        toCreateToDoForm.add(new Button("toCreateToDoButton"){
+            @Override
+            public void onSubmit(){
+                setResponsePage(new CreateToDoPage());
+            }
+        });
+
         var editToDoForm = new Form<>("editToDoForm");
         add(editToDoForm);
         editToDoForm.add(new Button("toEditToDoButton"){

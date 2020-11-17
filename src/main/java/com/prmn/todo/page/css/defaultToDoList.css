@@ -1,6 +1,9 @@
 .todoListDelete{
     float: right;
     margin-right: 3.3%;
+    position: relative;
+    top: -25px;
+
 }
 
 .todoList{
