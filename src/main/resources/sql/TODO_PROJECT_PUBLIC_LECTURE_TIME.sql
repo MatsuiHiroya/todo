@@ -1,6 +1,6 @@
 create table LECTURE_TIME
 (
-    ID              VARCHAR(8) not null
+    ID              BIGINT auto_increment not null
         primary key,
     LECTURE_INFO_ID VARCHAR(8) not null
         references LECTURE_INFO (ID)
