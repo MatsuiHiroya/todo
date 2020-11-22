@@ -1,15 +1,17 @@
 package com.prmn.todo.bean;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
     private String id;
     private String name;
     private String role;
-    private long grade;
+    private String grade;
     private String studentClass;
     private String department;
     private String password;
 
-    public Account(String id, String name, String role, long grade, String studentClass, String department, String password) {
+    public Account(String id, String name, String role, String grade, String studentClass, String department, String password) {
         this.id = id;
         this.name = name;
         this.role = role;
@@ -43,11 +45,11 @@ public class Account {
         this.role = role;
     }
 
-    public long getGrade() {
+    public String getGrade() {
         return grade;
     }
 
-    public void setGrade(long grade) {
+    public void setGrade(String grade) {
         this.grade = grade;
     }
 

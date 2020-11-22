@@ -1,23 +1,15 @@
 package com.prmn.todo.bean;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class ToDo {
+public class ToDo implements Serializable {
     private long id;
-    private String toDoName;
-    private String toDoContent;
+    private String todoName;
+    private String todoContent;
     private Timestamp limitTime;
     private String accountId;
     private String type;
-
-    public ToDo(long id, String toDoName, String toDoContent, Timestamp limitTime, String accountId, String type) {
-        this.id = id;
-        this.toDoName = toDoName;
-        this.toDoContent = toDoContent;
-        this.limitTime = limitTime;
-        this.accountId = accountId;
-        this.type = type;
-    }
 
     public long getId() {
         return id;
@@ -27,20 +19,20 @@ public class ToDo {
         this.id = id;
     }
 
-    public String getToDoName() {
-        return toDoName;
+    public String getTodoName() {
+        return todoName;
     }
 
-    public void setToDoName(String toDoName) {
-        this.toDoName = toDoName;
+    public void setTodoName(String todoName) {
+        this.todoName = todoName;
     }
 
-    public String getToDoContent() {
-        return toDoContent;
+    public String getTodoContent() {
+        return todoContent;
     }
 
-    public void setToDoContent(String toDoContent) {
-        this.toDoContent = toDoContent;
+    public void setTodoContent(String todoContent) {
+        this.todoContent = todoContent;
     }
 
     public Timestamp getLimitTime() {

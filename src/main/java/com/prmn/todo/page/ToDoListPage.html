@@ -105,13 +105,15 @@
                                     </div>
                                     <div>
 
+
+
                                         <li class="todoList">
                                             ToDoの名前  ToDoの期限<br>
                                             ToDoの内容(1行目)<br>
                                             ToDoの内容(2行目)
                                             <div class="ToDoListButton">
 
-                                                <form wicket:id="editToDoForm">
+                                                <!--form wicket:id="editToDoForm">
                                                     <button wicket:id="toEditToDoButton" class="btn">
                                                         <wicket:link>
                                                             <img src="images/pen_icon_32px.png">
@@ -123,7 +125,7 @@
                                                             <img src="images/garbage_can_32px.png">
                                                         </wicket:link>
                                                     </button>
-                                                </form>
+                                                </form-->
 
 
 
@@ -147,6 +149,29 @@
                                                         <img src="images/garbage_can_32px.png">
                                                     </wicket:link>
                                                 </button>
+                                            </div>
+                                        </li>
+
+                                        <li wicket:id="todoList" class="todoList">
+                                            <div>ToDo名:<span wicket:id="todoNames"></span>
+                                                <span wicket:id="limitTimes">ToDoの期限</span>
+                                            </div>
+                                            <div><span wicket:id="todoContents"></span></div>
+
+                                            <div class="ToDoListButton">
+                                                <form wicket:id="editToDoForm">
+                                                    <button wicket:id="toEditToDoButton" class="btn">
+                                                        <wicket:link>
+                                                            <img src="images/pen_icon_32px.png">
+                                                        </wicket:link>
+                                                    </button>
+
+                                                    <button wicket:id="deleteToDoButton" class="btn">
+                                                        <wicket:link>
+                                                            <img src="images/garbage_can_32px.png">
+                                                        </wicket:link>
+                                                    </button>
+                                                </form>
                                             </div>
                                         </li>
 
