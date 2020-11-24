@@ -13,6 +13,8 @@
     color: #5d627b;
     background: white;
     border: 1px solid; /* 線の太さと可視化 */
+
+    /*background-color: rgba(0,0,0,0.3);*/
 }
 
 

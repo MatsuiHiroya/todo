@@ -25,6 +25,11 @@ public class ToDoListPageService implements IToDoListPageService{
         return toDoList;
     }
 
+    @Override
+    public void deleteToDoList(long todoId){
+        toDoRepository.delete(todoId);
+    }
+
     /**@Override
     public void selectToDoList(){
         //仮Idの設定

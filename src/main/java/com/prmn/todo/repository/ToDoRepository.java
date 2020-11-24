@@ -33,5 +33,11 @@ public class ToDoRepository implements IToDoRepository{
         }
         return toDoList;
     }
-    
+
+    @Override
+    public void delete(long todoId){
+        String sql = "delete from TODO where (ID) = (?)";
+        jdbcTemplate.update(sql,todoId);
+    }
+
 }

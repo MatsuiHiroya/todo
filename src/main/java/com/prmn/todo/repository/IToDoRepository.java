@@ -8,4 +8,6 @@ public interface IToDoRepository {
 
     public List<ToDo> selectToDoList(String accountId);
 
+    public void delete(long todoId);
+
 }

@@ -4,6 +4,10 @@ import com.prmn.todo.bean.ToDo;
 import com.prmn.todo.service.IToDoListPageService;
 import com.prmn.todo.service.IToDoPageService;
 import com.prmn.todo.service.ToDoListPageService;
+import org.apache.wicket.ajax.AjaxRequestTarget;
+import org.apache.wicket.ajax.markup.html.AjaxLink;
+import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
@@ -42,19 +46,23 @@ public class ToDoListPage extends WebPage {
             }
         });
 
+        
+
+        WebMarkupContainer todoListWMC = new WebMarkupContainer("todoListWMC");
+        todoListWMC.setOutputMarkupId(true);
+        add(todoListWMC);
+
 
         // Service からデータベースのユーザ一覧をもらい、Modelにする
         // List型のモデルは Model.ofList(...) で作成する。
         var todoListModel = Model.ofList(toDoListPageService.selectToDoList());
-        /**　悲しみのデバック
-         * toDoListPageService.selectToDoList();
-         * */
 
 
         //List型のモデルを表示する　ListView
         var todoLV = new ListView<>("todoList",todoListModel){
             @Override
             protected void populateItem(ListItem<ToDo> listItem) {
+
                 // List型のモデルから、 <li>...</li> ひとつ分に分けられたモデルを取り出す
                 var itemModel = listItem.getModel();
                 ToDo toDo = itemModel.getObject(); //元々のListの n 番目の要素
@@ -82,17 +90,23 @@ public class ToDoListPage extends WebPage {
                     }
                 });
 
-                editToDoForm.add(new Button("deleteToDoButton"){
+                AjaxButton ajaxButton = new AjaxButton("deleteToDoButton"){
                     @Override
-                    public void onSubmit(){
-                        //削除の処理頑張ってね！！！！！！！！
+                    public void onSubmit(AjaxRequestTarget target){
+                        super.onSubmit(target);
+                        toDoListPageService.deleteToDoList(toDo.getId());
+                        //実際には、selectToDoListの引数にセッションからのaccount_idを渡す
+                        todoListModel.setObject(toDoListPageService.selectToDoList());
+                        target.add(todoListWMC);
                     }
-                });
+                };
+                editToDoForm.add(ajaxButton);
 
             }
 
         };
-        add(todoLV);
+        todoLV.setOutputMarkupId(true);
+        todoListWMC.add(todoLV);
 
 /**
         var editToDoForm = new Form<>("editToDoForm");
