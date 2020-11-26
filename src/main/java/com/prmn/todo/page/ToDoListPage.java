@@ -7,18 +7,22 @@ import com.prmn.todo.service.ToDoListPageService;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
+import org.apache.wicket.behavior.AttributeAppender;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.html.link.ExternalLink;
+import org.apache.wicket.markup.html.link.PopupSettings;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
 
+import javax.swing.*;
 import java.util.List;
 
 @MountPath("ToDoList")
@@ -46,7 +50,7 @@ public class ToDoListPage extends WebPage {
             }
         });
 
-        
+
 
         WebMarkupContainer todoListWMC = new WebMarkupContainer("todoListWMC");
         todoListWMC.setOutputMarkupId(true);
@@ -90,6 +94,17 @@ public class ToDoListPage extends WebPage {
                     }
                 });
 
+                /*PopupSettings settings = new PopupSettings();
+                settings.setWindowName("_blank");
+
+                queue(new ExternalLink("deleteToDoButton", "http://google.com").setPopupSettings(settings));*/
+
+                var deleteToDoName = new Label("deleteToDoName",todoNameModels);
+                listItem.add(deleteToDoName);
+
+                var deleteToDoForm = new Form<>("deleteToDoForm");
+                listItem.add(deleteToDoForm);
+
                 AjaxButton ajaxButton = new AjaxButton("deleteToDoButton"){
                     @Override
                     public void onSubmit(AjaxRequestTarget target){
@@ -100,7 +115,9 @@ public class ToDoListPage extends WebPage {
                         target.add(todoListWMC);
                     }
                 };
-                editToDoForm.add(ajaxButton);
+                deleteToDoForm.add(ajaxButton);
+
+
 
             }
 

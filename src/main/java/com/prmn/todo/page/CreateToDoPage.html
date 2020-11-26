@@ -64,8 +64,9 @@
                                 <p class="ttl">登録したい内容を入力し､「次へ」をクリックしてください。</p>
 
 
-                                <form id="id77" method="post"
-                                      action="../ihGs9iKRFvDIz-NoZc8mh_edZsOrlVwRR5gXITLZT5rCIkcoxzAFF6Y6Hu5Fev2HAR-Q2XHTN8c/ihG97">
+                                <!--form id="id77" method="post"
+                                      action="../ihGs9iKRFvDIz-NoZc8mh_edZsOrlVwRR5gXITLZT5rCIkcoxzAFF6Y6Hu5Fev2HAR-Q2XHTN8c/ihG97"-->
+                                <form>
                                     <div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"
                                          class="hidden-fields"><input type="hidden" name="id77_hf_0" id="id77_hf_0">
                                     </div>
@@ -83,149 +84,149 @@
                                         </a>
 
                                     </div>
-                                    <div class="panelBody simple">
-                                        <p class="head">スケジュールの登録内容
+                                    <!--一回Form閉じるよ-->
+                                </form>
+
+                                    <!--li wicket:id="createToDoListView"-->
+                                    <li>
+
+                                        <div class="panelBody simple">
+                                            <p class="head">スケジュールの登録内容
+
+                                            </p>
+
+                                            <table class="orig" cellpadding="0" cellspacing="0" border="0">
+                                                <tbody>
+                                                <form wicket:id="createToDoForm">
+
+                                                <tr class="simpleConfig">
+                                                    <th class="orig">簡易設定</th>
+                                                    <td class="orig"> 講義名
+
+                                                            <select wicket:id="lectureNameDropdown" class="className"></select>
+                                                            回数
+                                                            <select wicket:id="lectureTimeDropdown" class="times"></select>
+                                                            レポートボックス
+                                                            <select wicket:id="reportBoxDropdown" class="reportBox"></select>
 
 
-                                        </p>
+                                                        <a class="contentsUpdate">
+                                                            <button type="submit" class="btn" name="contentsUpdateButton">更新
+                                                                <!--wicket:link><img src="images/reload_symbol.png"></wicket:link-->
+                                                            </button>
+                                                        </a>
 
-                                        <table class="orig" cellpadding="0" cellspacing="0" border="0">
-                                            <tbody>
+                                                    </td>
+                                                </tr>
 
-                                            <tr class="simpleConfig">
-                                                <th class="orig">簡易設定</th>
-                                                <td class="orig"> 講義名
-                                                    <select class="className">
-                                                    <option selected="selected" value="0">未入力</option>
-                                                    <option value="1">事務棟</option>
-                                                    <option value="2">講義棟</option>
-                                                    <option value="3">体育館</option>
-                                                    <option value="4">実験棟</option>
-                                                    <option value="5">研究棟</option>
-                                                    <option value="6">大学院棟</option>
-                                                    <option value="7">10周年記念棟</option>
-                                                    <option value="8">教員個室</option>
-                                                    <option value="9">学外</option>
-                                                    <option value="10">国内出張</option>
-                                                    <option value="11">海外出張</option>
-                                                </select>回数
-                                                    <select class="times">
+                                                <tr>
+                                                    <th class="orig">日時</th>
+
+                                                    <td class="orig">
+                                                        <label class="date-edit"><input type="date" value="2019-08-22" class="scheduleDate"/></label>
+                                                        <!--select class="scheduleDate">
                                                         <option selected="selected" value="0">未入力</option>
-                                                        <option value="1">第一回</option>
-                                                        <option value="2">第二回</option>
-                                                        <option value="3">第三回</option>
-                                                        <option value="4">第四回</option>
-                                                        <option value="5">第五回</option>
-                                                        <option value="6">第六回</option>
-                                                        <option value="7">第七回</option>
-                                                        <option value="8">第八回</option>
-                                                        <option value="9">第九回</option>
-                                                        <option value="10">第十回</option>
-                                                        <option value="11">第十一回</option>
-                                                    </select>レポートボックス
-                                                    <select class="reportBox">
-                                                        <option selected="selected" value="0">未入力</option>
-                                                        <option value="1">レポート1</option>
-                                                        <option value="2">レポート2</option>
-                                                        <option value="3">レポート3</option>
-                                                        <option value="4">レポート4</option>
-                                                    </select>
+                                                        <option value="1">事務棟</option>
+                                                        <option value="2">講義棟</option>
+                                                        <option value="3">体育館</option>
+                                                        <option value="4">実験棟</option>
+                                                        <option value="5">研究棟</option>
+                                                        <option value="6">大学院棟</option>
+                                                        <option value="7">10周年記念棟</option>
+                                                        <option value="8">教員個室</option>
+                                                        <option value="9">学外</option>
+                                                        <option value="10">国内出張</option>
+                                                        <option value="11">海外出張</option>
+                                                    </select-->
 
-                                                    <a class="contentsUpdate">
-                                                        <button type="submit" class="btn" name="contentsUpdateButton">更新
-                                                            <!--wicket:link><img src="images/reload_symbol.png"></wicket:link-->
-                                                        </button>
-                                                    </a>
+                                                        <select class="scheduleHour">
+                                                            <option selected="selected" value="0">0</option>
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                            <option value="3">3</option>
+                                                            <option value="4">4</option>
+                                                            <option value="5">5</option>
+                                                            <option value="6">6</option>
+                                                            <option value="7">7</option>
+                                                            <option value="8">8</option>
+                                                            <option value="9">9</option>
+                                                            <option value="10">10</option>
+                                                            <option value="11">11</option>
+                                                            <option value="12">12</option>
+                                                            <option value="13">13</option>
+                                                            <option value="14">14</option>
+                                                            <option value="15">15</option>
+                                                            <option value="16">16</option>
+                                                            <option value="17">17</option>
+                                                            <option value="18">18</option>
+                                                            <option value="19">19</option>
+                                                            <option value="20">20</option>
+                                                            <option value="21">21</option>
+                                                            <option value="22">22</option>
+                                                            <option value="23">23</option>
+                                                        </select>
+                                                        時
+                                                        <select class="scheduleMinute">
+                                                            <option selected="selected" value="0">0</option>
+                                                            <option value="1">5</option>
+                                                            <option value="2">10</option>
+                                                            <option value="3">15</option>
+                                                            <option value="4">20</option>
+                                                            <option value="5">25</option>
+                                                            <option value="6">30</option>
+                                                            <option value="7">35</option>
+                                                            <option value="8">40</option>
+                                                            <option value="9">45</option>
+                                                            <option value="10">50</option>
+                                                            <option value="11">55</option>
+                                                        </select>
+                                                        分まで
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="orig">種類</th>
+                                                    <td class="orig">
+                                                        <select class="todoType">
+                                                        <option value="0">非公開</option>
+                                                        <option selected="selected" value="1">全体へ公開</option>
+                                                    </select></td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="orig">件名</th>
+                                                    <td class="orig">
 
-                                                </td>
-                                            </tr>
+                                                        <input type="text" wicket:id="todoNameTextBox"size="48" value=""
+                                                               class="todoName" maxlength="100"
+                                                               placeholder="件名を入力してください(100文字まで)">
 
-                                            <tr>
-                                                <th class="orig">日時</th>
+                                                        <!--input type="text" wicket:id="todoNameTextBox"size="48" value=""
+                                                               class="todoName" maxlength="100"-->
+                                                        <!--label class="date-edit"><input type="text" wicket:id="todoNameTextBox" class="scheduleDate"/></label-->
 
-                                                <td class="orig">
-                                                    <label class="date-edit"><input type="date" value="2019-08-22" class="scheduleDate"/></label>
-                                                    <!--select class="scheduleDate">
-                                                    <option selected="selected" value="0">未入力</option>
-                                                    <option value="1">事務棟</option>
-                                                    <option value="2">講義棟</option>
-                                                    <option value="3">体育館</option>
-                                                    <option value="4">実験棟</option>
-                                                    <option value="5">研究棟</option>
-                                                    <option value="6">大学院棟</option>
-                                                    <option value="7">10周年記念棟</option>
-                                                    <option value="8">教員個室</option>
-                                                    <option value="9">学外</option>
-                                                    <option value="10">国内出張</option>
-                                                    <option value="11">海外出張</option>
-                                                </select-->
+                                                        <br>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th class="orig">詳細</th>
+                                                    <td class="orig">
+                                                        <textarea rows="5" cols="50" class="content"
+                                                                               maxlength="500" wicket:id="todoContentTextBox"
+                                                                  placeholder="内容を入力してください(500文字まで)">
+                                                        </textarea> <br>（500文字まで）
+                                                    </td>
+                                                </tr>
+                                                </form>
+                                                <!--form wicket:id="dateForm">
+                                                    <input type="text" wicket:id="dateTextField">
+                                                    <button type="submit" wicket:id="dateButton"></button>
+                                                </form-->
 
-                                                    <select class="scheduleHour">
-                                                        <option selected="selected" value="0">0</option>
-                                                        <option value="1">1</option>
-                                                        <option value="2">2</option>
-                                                        <option value="3">3</option>
-                                                        <option value="4">4</option>
-                                                        <option value="5">5</option>
-                                                        <option value="6">6</option>
-                                                        <option value="7">7</option>
-                                                        <option value="8">8</option>
-                                                        <option value="9">9</option>
-                                                        <option value="10">10</option>
-                                                        <option value="11">11</option>
-                                                        <option value="12">12</option>
-                                                        <option value="13">13</option>
-                                                        <option value="14">14</option>
-                                                        <option value="15">15</option>
-                                                        <option value="16">16</option>
-                                                        <option value="17">17</option>
-                                                        <option value="18">18</option>
-                                                        <option value="19">19</option>
-                                                        <option value="20">20</option>
-                                                        <option value="21">21</option>
-                                                        <option value="22">22</option>
-                                                        <option value="23">23</option>
-                                                    </select>
-                                                    時
-                                                    <select class="scheduleMinute">
-                                                        <option selected="selected" value="0">0</option>
-                                                        <option value="1">5</option>
-                                                        <option value="2">10</option>
-                                                        <option value="3">15</option>
-                                                        <option value="4">20</option>
-                                                        <option value="5">25</option>
-                                                        <option value="6">30</option>
-                                                        <option value="7">35</option>
-                                                        <option value="8">40</option>
-                                                        <option value="9">45</option>
-                                                        <option value="10">50</option>
-                                                        <option value="11">55</option>
-                                                    </select>
-                                                    分まで
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="orig">種類</th>
-                                                <td class="orig"><select class="todoType">
-                                                    <option value="0">非公開</option>
-                                                    <option selected="selected" value="1">全体へ公開</option>
-                                                </select></td>
-                                            </tr>
-                                            <tr>
-                                                <th class="orig">件名</th>
-                                                <td class="orig"><input type="text" size="48" value=""
-                                                                        class="todoName" maxlength="100"><br>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th class="orig">詳細</th>
-                                                <td class="orig"><textarea rows="5" cols="50" class="content"
-                                                                           maxlength="500"></textarea> <br>（500文字まで）
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                    </li>
+
                                     <div class="squarePoints"></div>
                                     <div class="squarePoints"></div>
                                     <div class="addCreate">
@@ -235,7 +236,7 @@
                                     </div>
                                     <div class="squarePoints"></div>
                                     <div class="squarePoints"></div>
-                                </form>
+                                <!--/form-->
                             </div>
 
                         </div>

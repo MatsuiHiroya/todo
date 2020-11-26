@@ -35,6 +35,14 @@
 			<artifactId>wicketstuff-annotation</artifactId>
 		</dependency>
 
+		<!-- Wicketのextensionsを使う -->
+		<!-- https://mvnrepository.com/artifact/org.apache.wicket/wicket-extensions -->
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket-extensions</artifactId>
+			<version>8.4.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
