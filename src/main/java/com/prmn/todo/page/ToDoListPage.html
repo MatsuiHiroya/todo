@@ -160,20 +160,42 @@
                                             </div>
                                             <div><span wicket:id="todoContents"></span></div><br>
 
-                                            <div class="ToDoListButton">
-                                                <form wicket:id="editToDoForm">
+                                            <div class="ToDoListButton" style="display:inline-flex">
+                                                <form wicket:id="editToDoForm" class="editToDoForm">
                                                     <button wicket:id="toEditToDoButton" class="btn">
                                                         <wicket:link>
                                                             <img src="images/pen_icon_32px.png">
                                                         </wicket:link>
                                                     </button>
 
-                                                    <button wicket:id="deleteToDoButton" class="btn">
+                                                    <!--a type="submit" wicket:id="deleteToDoButton" class="btn">
                                                         <wicket:link>
                                                             <img src="images/garbage_can_32px.png">
                                                         </wicket:link>
-                                                    </button>
+                                                    </a-->
                                                 </form>
+
+                                                    <label class="popupLabel">
+                                                        <span class="deleteCheckBox">
+                                                            <wicket:link>
+                                                                <img src="images/garbage_can_32px.png">
+                                                            </wicket:link>
+                                                        </span>
+                                                        <input type="checkbox" name="checkbox" class="btn">
+                                                        <div id="popup" class="deleteConfirm">
+                                                            <span wicket:id="deleteToDoName"></span><br>
+                                                            <span>この予定を削除しますか？</span><br>
+                                                            <form wicket:id="deleteToDoForm">
+                                                                <a type="submit" wicket:id="deleteToDoButton" class="btn">
+                                                                    <wicket:link>
+                                                                        <img src="images/garbage_can_32px.png">
+                                                                    </wicket:link>
+                                                                </a>
+                                                            </form>
+
+                                                        </div>
+                                                    </label>
+                                                <!--/form-->
                                             </div>
                                         </li>
                                         </div>
