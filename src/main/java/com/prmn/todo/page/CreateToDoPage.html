@@ -213,6 +213,7 @@
                                                                                maxlength="500" wicket:id="todoContentTextBox"
                                                                   placeholder="内容を入力してください(500文字まで)">
                                                         </textarea> <br>（500文字まで）
+
                                                     </td>
                                                 </tr>
                                                 </form>
@@ -226,6 +227,11 @@
                                         </div>
 
                                     </li>
+                                <span wicket:id="feedBack"></span>
+                                <form wicket:id="form">
+                                    <input type="text" wicket:id="date" />
+                                    <input type="submit" />
+                                </form>
 
                                     <div class="squarePoints"></div>
                                     <div class="squarePoints"></div>
@@ -237,6 +243,15 @@
                                     <div class="squarePoints"></div>
                                     <div class="squarePoints"></div>
                                 <!--/form-->
+
+                                <form wicket:id="radioForm">
+                                    <div wicket:id="radioG">
+                                        <input wicket:id="1" type="radio">TRUE
+                                        <select wicket:id="testDropDown"></select><br>
+                                        <input wicket:id="2" type="radio"/>FALSE
+                                    </div>
+                                    <button wicket:id="radioButton">送信</button>
+                                </form>
                             </div>
 
                         </div>

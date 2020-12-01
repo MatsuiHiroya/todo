@@ -43,6 +43,14 @@
 			<version>8.4.0</version>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.wicketstuff/wicketstuff-jwicket-ui-datepicker -->
+		<dependency>
+			<groupId>org.wicketstuff</groupId>
+			<artifactId>wicketstuff-jwicket-ui-datepicker</artifactId>
+			<version>8.4.0</version>
+		</dependency>
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>

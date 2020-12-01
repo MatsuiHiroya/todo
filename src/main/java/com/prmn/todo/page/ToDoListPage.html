@@ -97,10 +97,21 @@
                                             </button>
                                         </form>
 
-                                        <div class="todoListDelete">
-                                            <button type="submit" class="btn">
+
+                                        <div class="todoListDelete" wicket:id="deleteBulkFormWMC">
+                                            <form wicket:id="deleteToDoBulkForm">
+                                                <button type="submit" class="btn" wicket:id="cancelButton">
+                                                    戻る
+                                                </button>
+
+                                                <button type="submit" class="btn" wicket:id="deleteToDoBulkButton">
                                                 一括削除
                                             </button>
+
+                                            </form>
+                                            <!--button type="submit" class="btn" wicket:id="deleteToDoBulkButton">
+                                                一括削除
+                                            </button-->
                                         </div>
                                     </div>
                                     <div>
@@ -192,9 +203,9 @@
                                                                     </wicket:link>
                                                                 </a>
                                                             </form>
-
                                                         </div>
                                                     </label>
+                                                <input wicket:id="deleteBulkCheckBox" type="checkbox"/>
                                                 <!--/form-->
                                             </div>
                                         </li>
