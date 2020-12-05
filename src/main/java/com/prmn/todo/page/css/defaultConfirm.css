@@ -193,3 +193,32 @@ address {
     line-height: 0;
     content: "";
 }
+
+/*popup表示させたいコンテンツのレイアウトと位置*/
+#popup{
+    width:30%;
+    line-height:100px;
+    color: #4169e1;
+    background-color: rgba(169, 169, 169, 0.5);
+    padding:0 4%;
+    box-sizing:border-box;
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+label img:hover{
+    cursor:pointer;
+}
+
+.popupLabel input[type="checkbox"]{
+    display:none;
+}
+
+/*checkboxがcheckの状態になったらpopupを表示させる*/
+.popupLabel input[type="checkbox"]:checked + #popup{
+    display:block;
+}
