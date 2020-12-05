@@ -65,6 +65,7 @@
                                     <div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"
                                          class="hidden-fields"><input type="hidden" name="id50_hf_0" id="id50_hf_0">
                                     </div>
+                                </form>
                                     <div class="panelBody simple">
                                         <div class="nonHead">TopPageに締め切りから何日前までのToDoを表示できるかを設定できます</div>
                                         <table cellpadding="0" cellspacing="0" border="0" class="orig">
@@ -72,34 +73,23 @@
                                             <tr>
                                                 <td class="orig vtop" style="width: 100px">
                                                     <label class="check_lb">
-                                                        <input type="radio" name="notification" value="on">
-                                                        <span>締め切り</span>&nbsp;
-                                                        <select class="w120" name="deadLine">
-                                                            <option selected="selected" value="0">当日まで</option>
-                                                            <option value="1">1日前まで</option>
-                                                            <option value="2">2日前まで</option>
-                                                            <option value="3">3日前まで</option>
-                                                            <option value="4">4日前まで</option>
-                                                            <option value="5">5日前まで</option>
-                                                            <option value="6">6日前まで</option>
-                                                            <option value="7">1週間前まで</option>
-                                                            <option value="14">2週間前まで</option>
-                                                        </select>
-                                                        &nbsp;のToDo通知をON&nbsp;
+                                                        <form wicket:id="radioForm">
+                                                            <div wicket:id="radioG">
+                                                                <input wicket:id="ToDoConfigOn" type="radio">
+                                                                締め切り<select class="w120" wicket:id="toDoConfigDropdown"></select>のToDo通知をON<br>
+                                                                <input wicket:id="ToDoConfigOff" type="radio"/>ToDoの通知をOFF<br>
+                                                            </div>
+                                                            <button wicket:id="toConfigurationToDoButton" type="submit" class="btn" name="notificationButton"
+                                                                    id="id35">変更
+                                                            </button>
+                                                        </form>
                                                     </label>
-                                                    <label class="check_lb">
-                                                        <input type="radio" name="notification" value="off">
-                                                        <span>ToDo通知をOFF</span>
-                                                    </label>
-                                                    <button type="submit" class="btn" name="notificationButton"
-                                                            id="id35">変更
-                                                    </button>
                                                 </td>
                                             </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                </form>
+                                <!--/form-->
                             </div>
                         </div>
                     </div>
