@@ -59,44 +59,68 @@
                 </div>
 
                 <div class="span9 w95p_print">
+
                     <div class="content">
                         <h3 class="mainttl2">ToDo詳細画面</h3>
                         <div class="panel_bottom_bg">
                             <div class="panel details">
-                                <p class="ttl">あなたが作成したToDoは編集・削除することができます。</p>
+                                <p class="ttl">あなたが作成したToDoの詳細画面です。この画面で削除することもできます。</p>
                                 <div class="panelBody simple">
                                     <div class="save" id="id57">
                                     </div>
                                     <div>
-                                        <button type="button" class="btn" id="id56">削除</button>
-                                        <button type="button" class="btn" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) { window.location.href='../Yx97i1gkGCHh4uaLud_HPgHNlb93DmWlzMA08-Clv9NufdySsfGgt3wgLs5b7tCJsQd2xq2NOB0/Yx969'; } ;return false">戻る</button>
+                                        <form  wicket:id="ConfirmToDoForm">
+
+                                            <label class="popupLabel">
+                                                <span name="checkbox" class="btn" id="id56">削除</span>
+                                                <input type="checkbox" name="checkbox" class="btn">
+                                                <div id="popup" class="deleteConfirm">
+                                                    <span>この予定を本当に削除しますか？</span><br>
+                                                    <a wicket:id="DeleteToDoButton" type="submit" class="btn">
+                                                        <wicket:link>
+                                                            <img src="images/garbage_can_32px.png">
+                                                        </wicket:link>
+                                                    </a>
+                                                </div>
+                                            </label>
+
+                                            <button  wicket:id="toToDoButton" type="submit" class="btn">戻る</button>
+                                            <!--<button wicket:id="toToDoButton" type="button" class="btn" onclick="var win = this.ownerDocument.defaultView || this.ownerDocument.parentWindow; if (win == window) {window.location.href='../Yx97i1gkGCHh4uaLud_HPgHNlb93DmWlzMA08-Clv9NufdySsfGgt3wgLs5b7tCJsQd2xq2NOB0/Yx969';} ;return false">戻る</button>-->
+                                        </form>
+
                                     </div>
-                                    <table class="layout">
+
+                                    <table wicket:id="confirmToDoView" class="layout">
                                         <tbody><tr>
                                             <td>
                                                 <div class="nonHead"></div>
-                                                <table class="orig" cellpadding="0" cellspacing="0" border="0">
+                                                <table  class="orig" cellpadding="0" cellspacing="0" border="0">
                                                     <tbody>
                                                     <tr>
                                                         <th class="orig" colspan="2">ToDo</th>
                                                     </tr>
                                                     <tr>
-                                                        <th class="orig w100">日時</th>
-                                                        <td class="orig"><span>2020/09/10（火） 10:00</span>&nbsp;〜&nbsp;<span>12:15</span></td>
+                                                        <th class="orig w100">期限</th>
+                                                        <td wicket:id="todoLimitTime" class="orig">
+                                                            <!--<span></span>&nbsp;〜&nbsp;<span>12:15</span>-->
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <th class="orig w100">種類</th>
-                                                        <td class="orig">授業</td>
+                                                        <td wicket:id="todoType" class="orig">
+                                                            <!--p wicket:id="todoType"></p-->
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <th class="orig w100">件名</th>
-                                                        <td class="orig">ソフトウェア工学　第2回　レポート1</td>
+                                                        <td wicket:id="todoName" class="orig">
+                                                            <!--span wicket:id="todoName"></span-->
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <th class="orig w100">詳細</th>
-                                                        <td class="orig">
-                                                            <p>まとめシートをグループごとに書いて提出する。</p>
-                                                            <p>手直しは下のまとめ部分をやる。</p>
+                                                        <td wicket:id="todoContent" class="orig">
+                                                            <!--span wicket:id="todoContent"></span-->
                                                         </td>
                                                     </tr>
                                                     </tbody>
@@ -106,9 +130,11 @@
                                         </tr>
                                         </tbody>
                                     </table>
+
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div><!-- end of row-fluid -->

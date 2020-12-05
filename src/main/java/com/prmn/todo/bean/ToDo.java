@@ -10,6 +10,7 @@ public class ToDo implements Serializable {
     private Timestamp limitTime;
     private String accountId;
     private String type;
+    private Boolean checked = false;
 
     public long getId() {
         return id;
@@ -57,6 +58,13 @@ public class ToDo implements Serializable {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public Boolean getChecked() {
+        return checked;
+    }
+    public void setChecked(Boolean checked) {
+        this.checked = checked;
     }
 }
 
