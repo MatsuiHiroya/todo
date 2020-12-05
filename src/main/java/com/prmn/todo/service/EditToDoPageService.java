@@ -12,7 +12,7 @@ import java.util.List;
 @Service
 public class EditToDoPageService implements IEditToDoPageService{
 
-    private EditToDoRepository editToDoRepository;
+    private final EditToDoRepository editToDoRepository;
 
     @Autowired
     public EditToDoPageService(EditToDoRepository editToDoRepository){this.editToDoRepository = editToDoRepository;}
@@ -20,7 +20,7 @@ public class EditToDoPageService implements IEditToDoPageService{
 
     @Override
     public List<ToDo> showEditToDo(long todoId) {
-        return editToDoRepository.selectToDo(todoId);
+        return editToDoRepository.selectToDoList(todoId);
     }
 
     @Override

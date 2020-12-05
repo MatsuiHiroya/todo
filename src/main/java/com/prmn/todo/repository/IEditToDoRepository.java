@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface IEditToDoRepository {
 
-    List<ToDo> selectToDo(long id);
+    List<ToDo> selectToDoList(long id);
 
     long updateToDo(String todoName, String todoContent, Timestamp limitTime,String type,long id);
 }

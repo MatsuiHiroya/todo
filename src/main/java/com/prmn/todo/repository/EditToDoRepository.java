@@ -18,7 +18,7 @@ public class EditToDoRepository implements IEditToDoRepository{
     public EditToDoRepository(JdbcTemplate jdbcTemplate){this.jdbcTemplate=jdbcTemplate;}
 
     @Override
-    public List<ToDo> selectToDo(long id){
+    public List<ToDo> selectToDoList(long id){
         var sql = "select * from todo where id = ?";
         return jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),id);
     }
