@@ -1,17 +1,12 @@
 package com.prmn.todo.bean;
 
-public class Notice {
+import java.io.Serializable;
+
+public class Notice implements Serializable {
     private long id;
     private String accountId;
     private boolean todoConfiguration;
-    private long dueDate;
-
-    public Notice(long id, String accountId, boolean todoConfiguration, long dueDate) {
-        this.id = id;
-        this.accountId = accountId;
-        this.todoConfiguration = todoConfiguration;
-        this.dueDate = dueDate;
-    }
+    private Integer dueDate;
 
     public long getId() {
         return id;
@@ -37,11 +32,11 @@ public class Notice {
         this.todoConfiguration = todoConfiguration;
     }
 
-    public long getDueDate() {
+    public Integer getDueDate() {
         return dueDate;
     }
 
-    public void setDueDate(long dueDate) {
+    public void setDueDate(Integer dueDate) {
         this.dueDate = dueDate;
     }
 }
