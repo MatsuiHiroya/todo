@@ -67,151 +67,159 @@
                                     あなたの予定を１ヶ月づつ表示します。新しい予定を追加したい時は、日付をクリックしてください。
                                 </p>
                                 <div class="panelBody">
-                                    <!--p class="bg">
-                                        背景色と種類：
-                                        <span class="research">研究</span>
-                                        &nbsp;
-                                        <span class="lesson">授業</span>
-                                        &nbsp;
-                                        <span class="office">事務</span>
-                                        &nbsp;
-                                        <span class="academy">学会</span>
-                                        &nbsp;
-                                        <span class="meeting">会議</span>
-                                        &nbsp;
-                                        <span class="businesstrip">出張</span>
-                                        &nbsp;
-                                        <span class="club">部活</span>
-                                        &nbsp;
-                                        <span class="officehour">オフィスアワー</span>
-                                        &nbsp;
-                                        <span class="etcetera">その他</span>
-                                    </p-->
-                                    <div class="none_print" style="margin-left: 20px;">
+                                    <!--form-- wicket:id="todoListForm"-->
+                                        <!--p class="bg">
+                                            背景色と種類：
+                                            <span class="research">研究</span>
+                                            &nbsp;
+                                            <span class="lesson">授業</span>
+                                            &nbsp;
+                                            <span class="office">事務</span>
+                                            &nbsp;
+                                            <span class="academy">学会</span>
+                                            &nbsp;
+                                            <span class="meeting">会議</span>
+                                            &nbsp;
+                                            <span class="businesstrip">出張</span>
+                                            &nbsp;
+                                            <span class="club">部活</span>
+                                            &nbsp;
+                                            <span class="officehour">オフィスアワー</span>
+                                            &nbsp;
+                                            <span class="etcetera">その他</span>
+                                        </p-->
+                                        <div class="none_print" style="margin-left: 20px;">
 
-                                        <form wicket:id="toCreateToDoForm">
-                                            <button wicket:id="toCreateToDoButton" class="btn">
-                                                <wicket:link>
-                                                    <img src="images/plus_symbol.png">
-                                                </wicket:link>
-                                            </button>
-                                        </form>
-
-
-                                        <div class="todoListDelete" wicket:id="deleteBulkFormWMC">
-                                            <form wicket:id="deleteToDoBulkForm">
-                                                <button type="submit" class="btn" wicket:id="cancelButton">
-                                                    戻る
+                                            <form wicket:id="toCreateToDoForm">
+                                                <button wicket:id="toCreateToDoButton" class="btn">
+                                                    <wicket:link>
+                                                        <img src="images/plus_symbol.png">
+                                                    </wicket:link>
                                                 </button>
-
-                                                <button type="submit" class="btn" wicket:id="deleteToDoBulkButton">
-                                                一括削除
-                                            </button>
-
                                             </form>
-                                            <!--button type="submit" class="btn" wicket:id="deleteToDoBulkButton">
-                                                一括削除
-                                            </button-->
-                                        </div>
-                                    </div>
-                                    <div>
 
 
-
-                                        <li class="todoList">
-                                            ToDoの名前  ToDoの期限<br>
-                                            ToDoの内容(1行目)<br>
-                                            ToDoの内容(2行目)
-                                            <div class="ToDoListButton">
-
-                                                <!--form wicket:id="editToDoForm">
-                                                    <button wicket:id="toEditToDoButton" class="btn">
-                                                        <wicket:link>
-                                                            <img src="images/pen_icon_32px.png">
-                                                        </wicket:link>
+                                            <div class="todoListDelete" wicket:id="deleteBulkFormWMC">
+                                                <form wicket:id="deleteToDoBulkForm">
+                                                    <button type="submit" class="btn" wicket:id="checkButton">
+                                                        一括選択
                                                     </button>
 
-                                                    <button wicket:id="deleteToDoButton" class="btn">
-                                                        <wicket:link>
-                                                            <img src="images/garbage_can_32px.png">
-                                                        </wicket:link>
-                                                    </button>
-                                                </form-->
-
-
-
-
-                                            </div>
-                                        </li>
-
-                                        <li class="todoList">
-                                            ToDoの名前  ToDoの期限<br>
-                                            ToDoの内容(1行目)<br>
-                                            ToDoの内容(2行目)
-                                            <div class="ToDoListButton">
-                                                <button type="submit" class="btn">
-                                                    <wicket:link>
-                                                        <img src="images/pen_icon_32px.png">
-                                                    </wicket:link>
-                                                </button>
-
-                                                <button type="submit" class="btn">
-                                                    <wicket:link>
-                                                        <img src="images/garbage_can_32px.png">
-                                                    </wicket:link>
-                                                </button>
-                                            </div>
-                                        </li>
-
-                                        <div wicket:id="todoListWMC">
-
-                                        <li wicket:id="todoList" class="todoList">
-                                            <div>ToDo名:<span wicket:id="todoNames"></span>
-                                                <span wicket:id="limitTimes">ToDoの期限</span>
-                                            </div>
-                                            <div><span wicket:id="todoContents"></span></div><br>
-
-                                            <div class="ToDoListButton" style="display:inline-flex">
-                                                <form wicket:id="editToDoForm" class="editToDoForm">
-                                                    <button wicket:id="toEditToDoButton" class="btn">
-                                                        <wicket:link>
-                                                            <img src="images/pen_icon_32px.png">
-                                                        </wicket:link>
+                                                    <button type="submit" class="btn" wicket:id="deleteToDoBulkButton">
+                                                        削除
                                                     </button>
 
-                                                    <!--a type="submit" wicket:id="deleteToDoButton" class="btn">
-                                                        <wicket:link>
-                                                            <img src="images/garbage_can_32px.png">
-                                                        </wicket:link>
-                                                    </a-->
+                                                    <button type="submit" class="btn" wicket:id="cancelButton">
+                                                        戻る
+                                                    </button>
+
                                                 </form>
+                                                <!--button type="submit" class="btn" wicket:id="deleteToDoBulkButton">
+                                                    一括削除
+                                                </button-->
+                                            </div>
+                                        </div>
+                                        <div>
 
-                                                    <label class="popupLabel">
+
+                                            <!--li class="todoList">
+                                                ToDoの名前 ToDoの期限<br>
+                                                ToDoの内容(1行目)<br>
+                                                ToDoの内容(2行目)
+                                                <div class="ToDoListButton"-->
+
+                                                    <!--form wicket:id="editToDoForm">
+                                                        <button wicket:id="toEditToDoButton" class="btn">
+                                                            <wicket:link>
+                                                                <img src="images/pen_icon_32px.png">
+                                                            </wicket:link>
+                                                        </button>
+
+                                                        <button wicket:id="deleteToDoButton" class="btn">
+                                                            <wicket:link>
+                                                                <img src="images/garbage_can_32px.png">
+                                                            </wicket:link>
+                                                        </button>
+                                                    </form-->
+
+
+                                                <!--/div>
+                                            </li>
+
+                                            <li class="todoList">
+                                                ToDoの名前 ToDoの期限<br>
+                                                ToDoの内容(1行目)<br>
+                                                ToDoの内容(2行目)
+                                                <div class="ToDoListButton">
+                                                    <button type="submit" class="btn">
+                                                        <wicket:link>
+                                                            <img src="images/pen_icon_32px.png">
+                                                        </wicket:link>
+                                                    </button>
+
+                                                    <button type="submit" class="btn">
+                                                        <wicket:link>
+                                                            <img src="images/garbage_can_32px.png">
+                                                        </wicket:link>
+                                                    </button>
+                                                </div>
+                                            </li-->
+
+
+                                            <!--input type="checkbox" wicket:id="groupselector">check/uncheck all</input-->
+
+                                            <div wicket:id="todoListWMC">
+                                                <!--span wicket:id="group"-->
+                                                <li wicket:id="todoList" class="todoList">
+                                                    <div>ToDo名:<a wicket:id="toConfirmToDoPage" href="#"><span wicket:id="todoNames"></span></a>
+                                                        <span wicket:id="limitTimes">ToDoの期限</span>
+                                                    </div>
+                                                    <div><span wicket:id="todoContents"></span></div>
+                                                    <br>
+
+                                                    <div class="ToDoListButton" style="display:inline-flex">
+                                                        <form wicket:id="editToDoForm" class="editToDoForm">
+                                                            <button wicket:id="toEditToDoButton" class="btn">
+                                                                <wicket:link>
+                                                                    <img src="images/pen_icon_32px.png">
+                                                                </wicket:link>
+                                                            </button>
+
+                                                            <!--a type="submit" wicket:id="deleteToDoButton" class="btn">
+                                                                <wicket:link>
+                                                                    <img src="images/garbage_can_32px.png">
+                                                                </wicket:link>
+                                                            </a-->
+                                                        </form>
+
+                                                        <label class="popupLabel">
                                                         <span class="deleteCheckBox">
                                                             <wicket:link>
                                                                 <img src="images/garbage_can_32px.png">
                                                             </wicket:link>
                                                         </span>
-                                                        <input type="checkbox" name="checkbox" class="btn">
-                                                        <div id="popup" class="deleteConfirm">
-                                                            <span wicket:id="deleteToDoName"></span><br>
-                                                            <span>この予定を削除しますか？</span><br>
-                                                            <form wicket:id="deleteToDoForm">
-                                                                <a type="submit" wicket:id="deleteToDoButton" class="btn">
-                                                                    <wicket:link>
-                                                                        <img src="images/garbage_can_32px.png">
-                                                                    </wicket:link>
-                                                                </a>
-                                                            </form>
-                                                        </div>
-                                                    </label>
-                                                <input wicket:id="deleteBulkCheckBox" type="checkbox"/>
-                                                <!--/form-->
+                                                            <input type="checkbox" name="checkbox" class="btn">
+                                                            <div id="popup" class="deleteConfirm">
+                                                                <span wicket:id="deleteToDoName"></span><br>
+                                                                <span>この予定を削除しますか？</span><br>
+                                                                <form wicket:id="deleteToDoForm">
+                                                                    <a type="submit" wicket:id="deleteToDoButton"
+                                                                       class="btn">
+                                                                        <wicket:link>
+                                                                            <img src="images/garbage_can_32px.png">
+                                                                        </wicket:link>
+                                                                    </a>
+                                                                </form>
+                                                            </div>
+                                                        </label>
+                                                        <input wicket:id="deleteBulkCheckBox" type="checkbox"/>
+                                                        <!--/form-->
+                                                    </div>
+                                                </li>
+                                                <!--/span-->
                                             </div>
-                                        </li>
                                         </div>
-
-                                    </div>
+                                    <!--/form-->
                                 </div>
                             </div>
                         </div>
