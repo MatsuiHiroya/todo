@@ -10,14 +10,6 @@ public class ReportBox {
     private Timestamp startTime;
     private String content;
 
-    public ReportBox(long id, long lectureTimeId, String boxName, Timestamp limitTime, Timestamp startTime, String content) {
-        this.id = id;
-        this.lectureTimeId = lectureTimeId;
-        this.boxName = boxName;
-        this.limitTime = limitTime;
-        this.startTime = startTime;
-        this.content = content;
-    }
 
     public long getId() {
         return id;

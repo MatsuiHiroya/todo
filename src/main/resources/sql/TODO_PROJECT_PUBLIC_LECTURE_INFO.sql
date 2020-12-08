@@ -6,7 +6,7 @@ create table LECTURE_INFO
     RESPONSIBLE  VARCHAR(32) not null,
     DEPARTMENT   VARCHAR(16) not null,
     GRADE        VARCHAR(4)  not null,
-    SESSION      VARCHAR(4),
+    SEASON       VARCHAR(4),
     TYPE         VARCHAR(4)
 );
 

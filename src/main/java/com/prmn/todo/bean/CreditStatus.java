@@ -1,13 +1,10 @@
 package com.prmn.todo.bean;
 
-public class CreditStatus {
-    private String id;
-    private String lectureInformationId;
+import java.io.Serializable;
 
-    public CreditStatus(String id, String lectureInformationId) {
-        this.id = id;
-        this.lectureInformationId = lectureInformationId;
-    }
+public class CreditStatus implements Serializable {
+    private String id;
+    private String lectureInfoId;
 
     public String getId() {
         return id;
@@ -17,11 +14,11 @@ public class CreditStatus {
         this.id = id;
     }
 
-    public String getLectureInformationId() {
-        return lectureInformationId;
+    public String getLectureInfoId() {
+        return lectureInfoId;
     }
 
-    public void setLectureInformationId(String lectureInformationId) {
-        this.lectureInformationId = lectureInformationId;
+    public void setLectureInfoId(String lectureInformationId) {
+        this.lectureInfoId = lectureInformationId;
     }
 }

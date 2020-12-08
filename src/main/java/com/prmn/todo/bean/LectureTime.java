@@ -1,27 +1,18 @@
 package com.prmn.todo.bean;
 
-import java.security.Timestamp;
+import java.io.Serializable;
+import java.sql.Time;
 import java.util.Date;
 
-public class LectureTime {
+public class LectureTime implements Serializable {
     private long id;
-    private String lectureInformationId;
-    private String startDate;
-    private String startTime;
+    private String lectureInfoId;
+    private Date startDate;
+    private Time startTime;
     private String startWeek;
-    private long times;
-    private String LectureInformation;
+    private String times;
+    private String LectureInfo;
 
-    public LectureTime(long id, String lectureInformationId, String startDate,
-                       String startTime, String startWeek, long times, String lectureInformation) {
-        this.id = id;
-        this.lectureInformationId = lectureInformationId;
-        this.startDate = startDate;
-        this.startTime = startTime;
-        this.startWeek = startWeek;
-        this.times = times;
-        LectureInformation = lectureInformation;
-    }
 
     public long getId() {
         return id;
@@ -31,27 +22,27 @@ public class LectureTime {
         this.id = id;
     }
 
-    public String getLectureInformationId() {
-        return lectureInformationId;
+    public String getLectureInfoId() {
+        return lectureInfoId;
     }
 
-    public void setLectureInformationId(String lectureInformationId) {
-        this.lectureInformationId = lectureInformationId;
+    public void setLectureInfoId(String lectureInfoId) {
+        this.lectureInfoId = lectureInfoId;
     }
 
-    public String getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(String startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public String getStartTime() {
+    public Time getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(String startTime) {
+    public void setStartTime(Time startTime) {
         this.startTime = startTime;
     }
 
@@ -63,19 +54,19 @@ public class LectureTime {
         this.startWeek = startWeek;
     }
 
-    public long getTimes() {
+    public String getTimes() {
         return times;
     }
 
-    public void setTimes(long times) {
+    public void setTimes(String times) {
         this.times = times;
     }
 
-    public String getLectureInformation() {
-        return LectureInformation;
+    public String getLectureInfo() {
+        return LectureInfo;
     }
 
-    public void setLectureInformation(String lectureInformation) {
-        LectureInformation = lectureInformation;
+    public void setLectureInfo(String lectureInfo) {
+        LectureInfo = lectureInfo;
     }
 }

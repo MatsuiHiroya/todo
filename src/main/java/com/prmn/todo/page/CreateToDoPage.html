@@ -111,7 +111,7 @@
 
 
                                                         <a class="contentsUpdate">
-                                                            <button type="submit" class="btn" name="contentsUpdateButton">更新
+                                                            <button type="submit" class="btn" name="contentsUpdateButton" wicket:id="update">更新
                                                                 <!--wicket:link><img src="images/reload_symbol.png"></wicket:link-->
                                                             </button>
                                                         </a>
@@ -123,7 +123,8 @@
                                                     <th class="orig">日時</th>
 
                                                     <td class="orig">
-                                                        <label class="date-edit"><input type="date" value="2019-08-22" class="scheduleDate"/></label>
+                                                        <input type="text" wicket:id="date" class="scheduleDate"/>
+                                                        <!--label class="date-edit"><input type="date" value="2019-08-22" class="scheduleDate"/></label-->
                                                         <!--select class="scheduleDate">
                                                         <option selected="selected" value="0">未入力</option>
                                                         <option value="1">事務棟</option>
@@ -216,6 +217,7 @@
 
                                                     </td>
                                                 </tr>
+                                                    <button wicket:id = "submit"></button>
                                                 </form>
                                                 <!--form wicket:id="dateForm">
                                                     <input type="text" wicket:id="dateTextField">
@@ -228,10 +230,7 @@
 
                                     </li>
                                 <span wicket:id="feedBack"></span>
-                                <form wicket:id="form">
-                                    <input type="text" wicket:id="date" />
-                                    <input type="submit" />
-                                </form>
+
 
                                     <div class="squarePoints"></div>
                                     <div class="squarePoints"></div>

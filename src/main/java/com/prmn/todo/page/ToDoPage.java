@@ -24,7 +24,7 @@ public class ToDoPage extends WebPage {
         editToDoForm.add(new Button("toEditToDoButton"){
             @Override
             public void onSubmit(){
-                setResponsePage(new EditToDoPage());
+                setResponsePage(new EditToDoPage(34));
             }
         });
     }

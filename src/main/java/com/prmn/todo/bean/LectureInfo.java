@@ -1,6 +1,8 @@
 package com.prmn.todo.bean;
 
-public class LectureInformation {
+import java.io.Serializable;
+
+public class LectureInfo implements Serializable {
     private String id;
     private String lectureName;
     private String responsible;
@@ -9,16 +11,6 @@ public class LectureInformation {
     private String season;
     private String type;
 
-    public LectureInformation(String id, String lectureName, String responsible,
-                              String department, long grade, String season, String type) {
-        this.id = id;
-        this.lectureName = lectureName;
-        this.responsible = responsible;
-        this.department = department;
-        this.grade = grade;
-        this.season = season;
-        this.type = type;
-    }
 
     public String getId() {
         return id;
