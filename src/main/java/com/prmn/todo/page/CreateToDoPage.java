@@ -14,6 +14,7 @@ import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.*;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
+import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
@@ -31,6 +32,10 @@ public class CreateToDoPage extends WebPage {
     //private List<LectureTime> lectureTimeList;
     //private List<ReportBox> reportBoxList = new ArrayList<>();
     private Date limitDate = new Date();
+    //private IModel dateModel = Model.of(new Date());
+    private String reportBoxName;
+    private String reportBoxContent;
+    //private ReportBox selectedReportBox;
 
     @SpringBean
     private ICreateToDoPageService createToDoPageService;
@@ -46,9 +51,6 @@ public class CreateToDoPage extends WebPage {
         var createToDoForm = new Form<>("createToDoForm");
         add(createToDoForm);
 
-        //ドロップダウンの名前とIDを保持するためのマップ
-        //Map<String, String> chooseDropDown = new HashMap<>();
-
         List<String> lectureNameDropdown = new ArrayList<>(){};
         List<LectureInfo> lectureInfoList= createToDoPageService.selectLectureInfo("b2182290");
         lectureInfoList.forEach(lectureInfo -> {
@@ -60,9 +62,6 @@ public class CreateToDoPage extends WebPage {
         List<String> reportBoxDropdown = new ArrayList<>(){};
         reportBoxDropdown.add("講義名を選択");
 
-        List<LectureTime> lectureTimeList = new ArrayList<>();
-
-
         DropDownChoice dropDownChoice1 = new DropDownChoice<>("lectureNameDropdown", new Model<>(),lectureNameDropdown);
         DropDownChoice dropDownChoice2 = new DropDownChoice<>("lectureTimeDropdown", new Model<>("講義名を選択"),lectureTimeDropdown);
         DropDownChoice dropDownChoice3 = new DropDownChoice<>("reportBoxDropdown", new Model<>("講義名を選択"),reportBoxDropdown);
@@ -73,7 +72,6 @@ public class CreateToDoPage extends WebPage {
             protected void onUpdate(AjaxRequestTarget target) {
 
                 lectureTimeDropdown.clear();
-                lectureTimeDropdown.add("講義名を選択");
                 //reportBoxDropdown.clear();
 
                 lectureInfoList.stream()
@@ -85,16 +83,25 @@ public class CreateToDoPage extends WebPage {
                             });
                         });
 
-                dropDownChoice2.setChoices(lectureTimeDropdown);
+                //dropDownChoice2.setChoices(lectureTimeDropdown);
                 //dropDownChoice3.setChoices(reportBoxDropdown);
                 //target.add(dropDownChoice2,dropDownChoice3);
                 target.add(dropDownChoice2);
             }
         });
+
+        IModel dateModel = Model.of(new Date());
+        DateTextField date = new DateTextField("date", dateModel);
+        this.add(new FeedbackPanel("feedBack"));
+        createToDoForm.add(date);
+        date.add(new DatePicker());
+        date.setOutputMarkupId(true);
+
+
+        IModel todoTypeModel = Model.of("");
         dropDownChoice2.add(new OnChangeAjaxBehavior(){
             protected void onUpdate(AjaxRequestTarget target) {
                 reportBoxDropdown.clear();
-                reportBoxDropdown.add("講義名を選択");
 
                 lectureInfoList.stream()
                         .filter(lectureInfo -> lectureInfo.getLectureName().equals(dropDownChoice1.getModelObject()))
@@ -104,119 +111,56 @@ public class CreateToDoPage extends WebPage {
                                     .filter(lectureTime -> lectureTime.getTimes().equals(dropDownChoice2.getModelObject()))
                                     .forEach(lectureTime -> {
                                         List<ReportBox> reportBoxList = createToDoPageService.selectReportBox(lectureTime.getId());
-                                        reportBoxList.forEach(reportBox -> reportBoxDropdown.add(reportBox.getBoxName()));
+                                        reportBoxList.forEach(reportBox -> {
+                                            reportBoxDropdown.add(reportBox.getBoxName());
+                                            //selectedReportBox = reportBox;
+                                            //selectedReportBox.setBoxName(reportBox.getBoxName());
+                                            //selectedReportBox.setContent(reportBox.getContent());
+                                            //selectedReportBox.setLimitTime(reportBox.getLimitTime());
+                                            //dateModel = Model.of(reportBox.getLimitTime());
+                                            limitDate = reportBox.getLimitTime();
+                                            reportBoxName = reportBox.getBoxName();
+                                            reportBoxContent = reportBox.getContent();
+                                        });
                             });
                         });
 
-                dropDownChoice3.setChoices(reportBoxDropdown);
-                target.add(dropDownChoice3);
+                //dropDownChoice3.setChoices(reportBoxDropdown)
+                target.add(dropDownChoice3,date);
             }
         });
         createToDoForm.add(dropDownChoice1);
         createToDoForm.add(dropDownChoice2);
         createToDoForm.add(dropDownChoice3);
 
-        //reportBoxList.stream()
-           //     .filter(reportBox -> reportBox.getBoxName() == dropDownChoice3.getModelObject())
-             //   .forEach(s -> System.out.println(s.getLimitTime()));
-                //.forEach(reportBox -> {limitDate = reportBox.getLimitTime();
-                //    System.out.println(limitDate);});
+        List<String> todoType = Arrays.asList("講義","レポートボックス","その他");
+        var todoTypeDropDown = new DropDownChoice<>("todoTypeDropdown",todoTypeModel ,todoType);
+        createToDoForm.add(todoTypeDropDown);
+        todoTypeDropDown.setOutputMarkupId(true);
 
-        DateTextField date = new DateTextField("date", new Model<Date>(limitDate));
-        this.add(new FeedbackPanel("feedBack"));
-        createToDoForm.add(date);
-        date.add(new DatePicker());
-        date.setOutputMarkupId(true);
-
-        var todoNameText = new TextField("todoNameTextBox", new Model<>());
-
+        var textModel = Model.of("");
+        var todoNameText = new TextField("todoNameTextBox", textModel);
         createToDoForm.add(todoNameText);
+        todoNameText.setOutputMarkupId(true);
 
-        //new Model<Date>(new Date()), new StyleDateConverter("M-", true)
-        var todoContentText = new TextArea<>("todoContentTextBox",new Model<>());
+        var contentModel = Model.of("");
+        var todoContentText = new TextArea<>("todoContentTextBox",contentModel);
         createToDoForm.add(todoContentText);
+        todoContentText.setOutputMarkupId(true);
 
-        var updateButton = new AjaxButton("update"){
+        AjaxButton updateButton = new AjaxButton("update"){
             @Override
             public void onSubmit(AjaxRequestTarget target){
-                /**reportBoxList.stream()
-                        .filter(reportBox -> reportBox.getBoxName() == dropDownChoice3.getModelObject())
-                        .forEach(s -> System.out.println(s.getLimitTime()));
-                target.add(date);*/
+                super.onSubmit(target);
+                dateModel.setObject(limitDate);
+                textModel.setObject(reportBoxName);
+                contentModel.setObject(reportBoxContent);
+                todoTypeModel.setObject("レポートボックス");
 
-                lectureInfoList.stream()
-                        .filter(lectureInfo -> lectureInfo.getLectureName().equals(dropDownChoice1.getModelObject()))
-                        .forEach(lectureInfo -> {
-                            System.out.println("bbbbb");
-                            List<LectureTime> lectureTimeList = createToDoPageService.selectLectureTime(lectureInfo.getId());
-                            lectureTimeList.forEach(lectureTime -> {
-                                System.out.println("ccccc");
-                                List<ReportBox> reportBoxList = createToDoPageService.selectReportBox(lectureTime.getId());
-                                reportBoxList.stream()
-                                        //.filter(reportBox -> reportBox.getBoxName().equals(dropDownChoice3.getModelObject()))
-                                        .forEach(reportBox -> {
-                                            System.out.println(dropDownChoice3.getModelObject());
-                                            limitDate = reportBox.getLimitTime();
-                                            System.out.println("gwggewra");
-                                            System.out.println(limitDate);
-                                        });
-                            });
-                        });
-                target.add(date);
+                target.add(date,todoContentText,todoNameText,todoTypeDropDown);
             }
         };
         createToDoForm.add(updateButton);
 
-        Button button = new Button("submit"){
-            @Override
-            public void onSubmit(){
-                System.out.println(todoContentText.getModelObject().toString());
-            }
-        };
-        createToDoForm.add(button);
-
-
-        /**Form<Void> form = new Form<Void>("form") {
-            @Override
-            protected void onSubmit() {
-                super.onSubmit();
-            }
-        };*/
-
-
-
-/**
-        DatePicker datePicker = new DatePicker();
-
-        var dateForm = new Form<>("dateForm");
-        add(dateForm);
-
-        var dateTextField = new DateTextField("dateTextField",new Model<Date>(new Date()));
-        dateForm.add(dateTextField);
-
-        dateForm.add(new Button("dateButton"){
-            @Override
-            public void onSubmit(){
-                //LocalDate date = datePicker.getValue();
-                //dateTextField = new DateTextField("dateTextField",new Model<>(date.toString()));
-            }
-        });*/
-
-        List<String> testDropdown = new ArrayList<>(){};
-        testDropdown.addAll(Arrays.asList("a","b","c"));
-        var radioForm = new Form<>("radioForm");
-        add(radioForm);
-        var radioG = new RadioGroup<>("radioG");
-        radioForm.add(
-                radioG.add(new Radio("1",new Model("pp"))),
-                radioG.add(new DropDownChoice<>("testDropDown", new Model<>("b"),testDropdown)),
-                radioG.add(new Radio("2",new Model("gg")))
-        );
-        var radioButton = new Button("radioButton"){
-            @Override
-            public void onSubmit(){
-            }
-        };
-        radioForm.add(radioButton);
     }
 }

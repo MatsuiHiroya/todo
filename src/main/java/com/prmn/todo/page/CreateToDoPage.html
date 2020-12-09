@@ -124,21 +124,6 @@
 
                                                     <td class="orig">
                                                         <input type="text" wicket:id="date" class="scheduleDate"/>
-                                                        <!--label class="date-edit"><input type="date" value="2019-08-22" class="scheduleDate"/></label-->
-                                                        <!--select class="scheduleDate">
-                                                        <option selected="selected" value="0">未入力</option>
-                                                        <option value="1">事務棟</option>
-                                                        <option value="2">講義棟</option>
-                                                        <option value="3">体育館</option>
-                                                        <option value="4">実験棟</option>
-                                                        <option value="5">研究棟</option>
-                                                        <option value="6">大学院棟</option>
-                                                        <option value="7">10周年記念棟</option>
-                                                        <option value="8">教員個室</option>
-                                                        <option value="9">学外</option>
-                                                        <option value="10">国内出張</option>
-                                                        <option value="11">海外出張</option>
-                                                    </select-->
 
                                                         <select class="scheduleHour">
                                                             <option selected="selected" value="0">0</option>
@@ -187,18 +172,15 @@
                                                 <tr>
                                                     <th class="orig">種類</th>
                                                     <td class="orig">
-                                                        <select class="todoType">
-                                                        <option value="0">非公開</option>
-                                                        <option selected="selected" value="1">全体へ公開</option>
-                                                    </select></td>
+                                                        <select wicket:id="todoTypeDropdown" class="todoType"></select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
                                                     <th class="orig">件名</th>
                                                     <td class="orig">
 
                                                         <input type="text" wicket:id="todoNameTextBox"size="48" value=""
-                                                               class="todoName" maxlength="100"
-                                                               placeholder="件名を入力してください(100文字まで)">
+                                                               class="todoName" maxlength="100">
 
                                                         <!--input type="text" wicket:id="todoNameTextBox"size="48" value=""
                                                                class="todoName" maxlength="100"-->
@@ -211,13 +193,11 @@
                                                     <th class="orig">詳細</th>
                                                     <td class="orig">
                                                         <textarea rows="5" cols="50" class="content"
-                                                                               maxlength="500" wicket:id="todoContentTextBox"
-                                                                  placeholder="内容を入力してください(500文字まで)">
+                                                                               maxlength="500" wicket:id="todoContentTextBox">
                                                         </textarea> <br>（500文字まで）
 
                                                     </td>
                                                 </tr>
-                                                    <button wicket:id = "submit"></button>
                                                 </form>
                                                 <!--form wicket:id="dateForm">
                                                     <input type="text" wicket:id="dateTextField">
@@ -242,15 +222,6 @@
                                     <div class="squarePoints"></div>
                                     <div class="squarePoints"></div>
                                 <!--/form-->
-
-                                <form wicket:id="radioForm">
-                                    <div wicket:id="radioG">
-                                        <input wicket:id="1" type="radio">TRUE
-                                        <select wicket:id="testDropDown"></select><br>
-                                        <input wicket:id="2" type="radio"/>FALSE
-                                    </div>
-                                    <button wicket:id="radioButton">送信</button>
-                                </form>
                             </div>
 
                         </div>
