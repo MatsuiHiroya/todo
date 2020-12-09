@@ -23,6 +23,9 @@ import org.apache.wicket.ajax.form.AjaxFormComponentUpdatingBehavior;
 
 //import org.apache.wicket.extensions.markup.html.form.DateTextField;
 
+import java.sql.Timestamp;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 
@@ -162,6 +165,33 @@ public class CreateToDoPage extends WebPage {
             }
         };
         createToDoForm.add(updateButton);
+
+
+        //Date型→String型の変換処理
+        System.out.println("変換前だよ；" + limitDate);
+        String currentTimestampToString = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(limitDate);
+        System.out.println("変換したよ：" + currentTimestampToString + "--終わり");
+        String dateA = currentTimestampToString.substring(0,10);
+        System.out.println("日付：" + currentTimestampToString.substring(0,10));
+        String timeB = currentTimestampToString.substring(11,13);
+        System.out.println("時間：" + currentTimestampToString.substring(11,13));
+        String minitsC = currentTimestampToString.substring(14,16);
+        System.out.println("分：" + currentTimestampToString.substring(14,16));
+        System.out.println("--------------------------------------------------");
+
+        //String型→Date型の変換処理
+        System.out.println("変換前だよ；" + currentTimestampToString);
+        String test = dateA + " " + timeB + ":" + minitsC + ":00";
+        System.out.println("まって：" + test);
+        //parseでエラーがでるためtry-catchが必要
+        try {
+            SimpleDateFormat beforeDate = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+            Date a = beforeDate.parse(test);
+            System.out.println("変換後だよ");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
 
     }
 }
