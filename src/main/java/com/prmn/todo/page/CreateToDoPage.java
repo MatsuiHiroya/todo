@@ -43,8 +43,8 @@ public class CreateToDoPage extends WebPage {
     public CreateToDoPage() {
         var toTopLink = new BookmarkablePageLink<>("toTopPage",TopPage.class);
         add(toTopLink);
-        var toToDoLink = new BookmarkablePageLink<>("toToDoPage",ToDoPage.class);
-        add(toToDoLink);
+        var toToDoListLink = new BookmarkablePageLink<>("toToDoListPage",ToDoListPage.class);
+        add(toToDoListLink);
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage",ConfigurationToDoPage.class);
         add(toConfigurationToDoLink);
 
@@ -63,6 +63,7 @@ public class CreateToDoPage extends WebPage {
         reportBoxDropdown.add("講義名を選択");
 
         DropDownChoice dropDownChoice1 = new DropDownChoice<>("lectureNameDropdown", new Model<>(),lectureNameDropdown);
+        System.out.println(dropDownChoice1);
         DropDownChoice dropDownChoice2 = new DropDownChoice<>("lectureTimeDropdown", new Model<>("講義名を選択"),lectureTimeDropdown);
         DropDownChoice dropDownChoice3 = new DropDownChoice<>("reportBoxDropdown", new Model<>("講義名を選択"),reportBoxDropdown);
         dropDownChoice2.setOutputMarkupId(true);

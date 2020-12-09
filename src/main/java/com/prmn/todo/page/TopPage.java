@@ -10,8 +10,7 @@ import org.wicketstuff.annotation.mount.MountPath;
 public class TopPage extends WebPage {
 
     public TopPage() {
-        var toToDoLink = new BookmarkablePageLink<>("toToDoPage", ToDoPage.class);
-        add(toToDoLink);
+        var toToDoListLink = new BookmarkablePageLink<>("toToDoListPage", ToDoListPage.class);
+        add(toToDoListLink);
     }
-
 }

@@ -25,8 +25,8 @@ public class ConfigurationToDoPage extends WebPage {
     public ConfigurationToDoPage() {
         var toTopLink = new BookmarkablePageLink<>("toTopPage",TopPage.class);
         add(toTopLink);
-        var toToDoLink = new BookmarkablePageLink<>("toToDoPage",ToDoPage.class);
-        add(toToDoLink);
+        var toToDoListLink = new BookmarkablePageLink<>("toToDoListPage",ToDoListPage.class);
+        add(toToDoListLink);
         var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage",CreateToDoPage.class);
         add(toCreateToDoLink);
 

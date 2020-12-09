@@ -49,8 +49,6 @@ public class ToDoListPage extends WebPage {
         add(toCreateToDoLink);
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage", ConfigurationToDoPage.class);
         add(toConfigurationToDoLink);
-        var toEditToDoLink = new BookmarkablePageLink<>("toEditToDoPage", EditToDoPage.class);
-        add(toEditToDoLink);
         var toCreateToDoForm = new Form<>("toCreateToDoForm");
         add(toCreateToDoForm);
         toCreateToDoForm.add(new Button("toCreateToDoButton"){

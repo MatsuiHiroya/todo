@@ -33,8 +33,8 @@ public class ConfirmToDoPage extends WebPage {
         var toTopLink = new BookmarkablePageLink<>("toTopPage", TopPage.class);
         add(toTopLink);
         //ヘッダーのボタンからToDoPageへの移動
-        var toToDoLink = new BookmarkablePageLink<>("toToDoPage", ToDoPage.class);
-        add(toToDoLink);
+        var toToDoListLink = new BookmarkablePageLink<>("toToDoListPage", ToDoListPage.class);
+        add(toToDoListLink);
         //左側のスケジュール部分からToDo作成ページへの移動
         var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage", CreateToDoPage.class);
         add(toCreateToDoLink);
@@ -84,7 +84,7 @@ public class ConfirmToDoPage extends WebPage {
         confirmToDoForm.add(new Button("toToDoButton"){
             @Override
             public void onSubmit(){
-                setResponsePage(new ToDoPage());
+                setResponsePage(new ToDoListPage());
             }
         });
 
@@ -95,7 +95,7 @@ public class ConfirmToDoPage extends WebPage {
             public void onSubmit(AjaxRequestTarget target){
                 super.onSubmit(target);
                 confirmToDoPageService.DeleteConfirmToDo(373, "b2181740");
-                setResponsePage(new ToDoPage());
+                setResponsePage(new ToDoListPage());
             }
         };
         confirmToDoForm.add(ajaxButton);

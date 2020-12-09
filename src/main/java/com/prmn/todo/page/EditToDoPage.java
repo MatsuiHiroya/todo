@@ -28,8 +28,8 @@ public class EditToDoPage extends WebPage {
     public EditToDoPage(long todoId) {
         var toTopLink = new BookmarkablePageLink<>("toTopPage", TopPage.class);
         add(toTopLink);
-        var toToDoLink = new BookmarkablePageLink<>("toToDoPage", ToDoPage.class);
-        add(toToDoLink);
+        var toToDoListLink = new BookmarkablePageLink<>("toToDoListPage", ToDoListPage.class);
+        add(toToDoListLink);
         var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage", CreateToDoPage.class);
         add(toCreateToDoLink);
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage", ConfigurationToDoPage.class);
@@ -41,8 +41,7 @@ public class EditToDoPage extends WebPage {
         var editForm = new Form<>("editForm");
         add(editForm);
 
-        DateTextField date = new DateTextField("limitTime", new Model<Date>(toDo.getLimitTime()));
-        //this.add(new FeedbackPanel("feedBack"));
+        DateTextField date = new DateTextField("limitTime", new Model<>(toDo.getLimitTime()));
         this.add(editForm);
         editForm.add(date);
         date.add(new DatePicker());
