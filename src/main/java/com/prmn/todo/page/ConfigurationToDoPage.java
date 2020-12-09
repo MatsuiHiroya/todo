@@ -54,7 +54,7 @@ public class ConfigurationToDoPage extends WebPage {
 
                 configurationToDoPageService.updateToDoConfig(toDoConfigFrag, parseInt(DropdownChoice.getModelObject().substring(0,1)), "b2182330"/**accountId**/);
 
-                setResponsePage(ToDoPage.class);
+                setResponsePage(ToDoListPage.class);
             }
         });
     }
