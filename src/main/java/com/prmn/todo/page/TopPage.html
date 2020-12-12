@@ -137,10 +137,15 @@
                                 <h3 class="mainttl2">ToDoの通知</h3>
                                 <div class="panel_bottom_bg">
                                     <div class="panel details">
-                                        <p class="ttl">期限が近いToDoを表示しています</p>
-                                        <div class="panelBody">
-                                            <p class="text">ソフトウェア工学 期限：9月3日16:00</p>
-                                        </div>
+                                        <span wicket:id="evenBlock">
+                                            <list wicket:id="configToDoList">
+	                                            <span wicket:id="todoName"><p>ToDo名：</p></span>
+                                                <span wicket:id="todoLimitTime"><p>期限：</p></span>
+                                            </list>
+                                        </span>
+                                        <span wicket:id="oddBlock">
+                                            <span wicket:id="offMessage"></span>
+                                        </span>
                                     </div>
                                 </div>
                             </div>

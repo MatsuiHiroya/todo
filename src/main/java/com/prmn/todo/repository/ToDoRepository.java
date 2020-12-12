@@ -1,12 +1,14 @@
 package com.prmn.todo.repository;
 
 import com.prmn.todo.bean.Account;
+import com.prmn.todo.bean.Notice;
 import com.prmn.todo.bean.ToDo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Repository
@@ -39,5 +41,24 @@ public class ToDoRepository implements IToDoRepository{
         String sql = "delete from TODO where (ID) = (?)";
         jdbcTemplate.update(sql,todoId);
     }
+
+    @Override
+    public List<ToDo> selectConfigTodoList(String accountId, LocalDateTime limitTime, LocalDateTime nowTime) {
+        String sql = "select * from TODO where ACCOUNT_ID = ? and LIMIT_TIME <= ? and LIMIT_TIME >= ?";
+
+        List<ToDo> toDoList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(ToDo.class), accountId, limitTime, nowTime);
+
+        for (ToDo toDo : toDoList) {
+            System.out.println(toDo.getId());
+            System.out.println(toDo.getTodoName());
+            System.out.println(toDo.getAccountId());
+            System.out.println(toDo.getLimitTime());
+        }
+
+
+
+        return toDoList;
+    }
+
 
 }

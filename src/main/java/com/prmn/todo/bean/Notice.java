@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Notice implements Serializable {
     private long id;
     private String accountId;
-    private boolean todoConfiguration;
+    private boolean todoConfig;
     private Integer dueDate;
 
     public long getId() {
@@ -24,12 +24,12 @@ public class Notice implements Serializable {
         this.accountId = accountId;
     }
 
-    public boolean isTodoConfiguration() {
-        return todoConfiguration;
+    public boolean isTodoConfig() {
+        return todoConfig;
     }
 
-    public void setTodoConfiguration(boolean todoConfiguration) {
-        this.todoConfiguration = todoConfiguration;
+    public void setTodoConfig(boolean todoConfig) {
+        this.todoConfig = todoConfig;
     }
 
     public Integer getDueDate() {
