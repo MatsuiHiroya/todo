@@ -5,12 +5,14 @@ import com.prmn.todo.service.IConfigurationToDoPageService;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.*;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import static java.lang.Integer.parseInt;
@@ -27,7 +29,18 @@ public class ConfigurationToDoPage extends WebPage {
         add(toTopLink);
         var toToDoListLink = new BookmarkablePageLink<>("toToDoListPage",ToDoListPage.class);
         add(toToDoListLink);
-        var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage",CreateToDoPage.class);
+        var toCreateToDoLink = new Link<>("toCreateToDoPage"){
+            @Override
+            public void onClick(){
+                Date limitDate = new Date();
+                String limitHour = "0";
+                String limitMinute = "0";
+                String todoType = "その他";
+                String reportBoxName = "";
+                String reportBoxContent = "";
+                setResponsePage(new CreateToDoPage(limitDate,limitHour,limitMinute,todoType,reportBoxName,reportBoxContent));
+            }
+        };
         add(toCreateToDoLink);
 
         List<Notice> toDoConfigList = configurationToDoPageService.selectToDoConfig("b2182330"/**accountId**/);

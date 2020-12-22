@@ -25,14 +25,6 @@ public class ToDoRepository implements IToDoRepository{
     public List<ToDo> selectToDoList(String accountId){
         String sql = "select * from TODO where ACCOUNT_ID = ?";
         List<ToDo> toDoList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),accountId);
-        for (ToDo toDo : toDoList){
-            System.out.println(toDo.getId());
-            System.out.println(toDo.getTodoName());
-            System.out.println(toDo.getTodoContent());
-            System.out.println(toDo.getAccountId());
-            System.out.println(toDo.getLimitTime());
-            System.out.println(toDo.getType());
-        }
         return toDoList;
     }
 

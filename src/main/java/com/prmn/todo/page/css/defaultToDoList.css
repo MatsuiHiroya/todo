@@ -67,7 +67,7 @@ button.btn, input[type="submit"].btn {
 .ToDoListButton{
     float: right;
     position: relative;
-    top: -30px;
+    top: -50px;
 }
 
 /*popup表示させたいコンテンツのレイアウトと位置*/
@@ -143,4 +143,23 @@ label{
 
 .todoList2{
     background-color: black;
+}
+
+.todoTitle{
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.todoContent{
+    font-size: 18px;
+}
+
+.btn{
+    font-size: 24px;
+    font-weight: bolder;
+    color: #535353;
+}
+
+.toCreateTodo{
+    margin-left: 1.2%;
 }

@@ -5,8 +5,10 @@ import com.prmn.todo.bean.LectureTime;
 import com.prmn.todo.bean.ReportBox;
 import com.prmn.todo.repository.ICreateToDoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -51,6 +53,11 @@ public class CreateToDoPageService implements ICreateToDoPageService{
     @Override
     public List<ReportBox> selectReportBox(long lectureTimeId){
         return createToDoRepository.selectReportBox(lectureTimeId);
+    }
+
+    @Order
+    public void insertToDo(String todoName, String todoContent, Timestamp limit,String accountId,String type){
+        createToDoRepository.insertToDo(todoName,todoContent,limit,accountId,type);
     }
 
 }

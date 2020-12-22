@@ -89,8 +89,9 @@
                                         </p-->
                                         <div class="none_print" style="margin-left: 20px;">
 
-                                            <form wicket:id="toCreateToDoForm">
+                                            <form wicket:id="toCreateToDoForm" class = "toCreateTodo">
                                                 <button wicket:id="toCreateToDoButton" class="btn">
+                                                    <a style="top: 35px">追加</a>
                                                     <wicket:link>
                                                         <img src="images/plus_symbol.png">
                                                     </wicket:link>
@@ -100,7 +101,7 @@
 
                                             <div class="todoListDelete" wicket:id="deleteBulkFormWMC">
                                                 <form wicket:id="deleteToDoBulkForm">
-                                                    <button type="submit" class="btn" wicket:id="checkButton">
+                                                    <button type="submit" class="btn" wicket:id="checkButton" style="">
                                                         一括選択
                                                     </button>
 
@@ -121,59 +122,14 @@
                                         <div>
 
 
-                                            <!--li class="todoList">
-                                                ToDoの名前 ToDoの期限<br>
-                                                ToDoの内容(1行目)<br>
-                                                ToDoの内容(2行目)
-                                                <div class="ToDoListButton"-->
-
-                                                    <!--form wicket:id="editToDoForm">
-                                                        <button wicket:id="toEditToDoButton" class="btn">
-                                                            <wicket:link>
-                                                                <img src="images/pen_icon_32px.png">
-                                                            </wicket:link>
-                                                        </button>
-
-                                                        <button wicket:id="deleteToDoButton" class="btn">
-                                                            <wicket:link>
-                                                                <img src="images/garbage_can_32px.png">
-                                                            </wicket:link>
-                                                        </button>
-                                                    </form-->
-
-
-                                                <!--/div>
-                                            </li>
-
-                                            <li class="todoList">
-                                                ToDoの名前 ToDoの期限<br>
-                                                ToDoの内容(1行目)<br>
-                                                ToDoの内容(2行目)
-                                                <div class="ToDoListButton">
-                                                    <button type="submit" class="btn">
-                                                        <wicket:link>
-                                                            <img src="images/pen_icon_32px.png">
-                                                        </wicket:link>
-                                                    </button>
-
-                                                    <button type="submit" class="btn">
-                                                        <wicket:link>
-                                                            <img src="images/garbage_can_32px.png">
-                                                        </wicket:link>
-                                                    </button>
-                                                </div>
-                                            </li-->
-
-
-                                            <!--input type="checkbox" wicket:id="groupselector">check/uncheck all</input-->
-
                                             <div wicket:id="todoListWMC">
                                                 <!--span wicket:id="group"-->
                                                 <li wicket:id="todoList" class="todoList">
-                                                    <div>ToDo名:<a wicket:id="toConfirmToDoPage" href="#"><span wicket:id="todoNames"></span></a>
-                                                        <span wicket:id="limitTimes">ToDoの期限</span>
+                                                    <div class="todoTitle">
+                                                        ToDo名:<a wicket:id="toConfirmToDoPage" href="#"><span wicket:id="todoNames"></span></a>
+                                                        期限:<span wicket:id="limitTimes"></span>
                                                     </div>
-                                                    <div><span wicket:id="todoContents"></span></div>
+                                                    <div class="todoContent"><span wicket:id="todoContents"></span></div>
                                                     <br>
 
                                                     <div class="ToDoListButton" style="display:inline-flex">
@@ -208,10 +164,11 @@
                                                                             <img src="images/garbage_can_32px.png">
                                                                         </wicket:link>
                                                                     </a>
+                                                                    <a class="btn" style="font-size: 24px">戻る</a>
                                                                 </form>
                                                             </div>
                                                         </label>
-                                                        <input wicket:id="deleteBulkCheckBox" type="checkbox"/>
+                                                        <input wicket:id="deleteBulkCheckBox" type="checkbox" style="transform:	scale(1.4);"/>
                                                         <!--/form-->
                                                     </div>
                                                 </li>

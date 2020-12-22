@@ -11,6 +11,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.AbstractReadOnlyModel;
@@ -19,6 +20,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
 
 import javax.swing.*;
+import java.util.Date;
 
 
 //ToDo確認
@@ -36,7 +38,18 @@ public class ConfirmToDoPage extends WebPage {
         var toToDoListLink = new BookmarkablePageLink<>("toToDoListPage", ToDoListPage.class);
         add(toToDoListLink);
         //左側のスケジュール部分からToDo作成ページへの移動
-        var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage", CreateToDoPage.class);
+        var toCreateToDoLink = new Link<>("toCreateToDoPage"){
+            @Override
+            public void onClick(){
+                Date limitDate = new Date();
+                String limitHour = "0";
+                String limitMinute = "0";
+                String todoType = "その他";
+                String reportBoxName = "";
+                String reportBoxContent = "";
+                setResponsePage(new CreateToDoPage(limitDate,limitHour,limitMinute,todoType,reportBoxName,reportBoxContent));
+            }
+        };
         add(toCreateToDoLink);
         //左側のスケジュール部分からToDo設定ページへの移動
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage", ConfigurationToDoPage.class);

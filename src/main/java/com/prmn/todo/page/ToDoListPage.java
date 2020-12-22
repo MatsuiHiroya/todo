@@ -45,7 +45,18 @@ public class ToDoListPage extends WebPage {
     public ToDoListPage() {
         var toTopLink = new BookmarkablePageLink<>("toTopPage", TopPage.class);
         add(toTopLink);
-        var toCreateToDoLink = new BookmarkablePageLink<>("toCreateToDoPage", CreateToDoPage.class);
+        var toCreateToDoLink = new Link<>("toCreateToDoPage"){
+            @Override
+            public void onClick(){
+                Date limitDate = new Date();
+                String limitHour = "0";
+                String limitMinute = "0";
+                String todoType = "その他";
+                String reportBoxName = "";
+                String reportBoxContent = "";
+                setResponsePage(new CreateToDoPage(limitDate,limitHour,limitMinute,todoType,reportBoxName,reportBoxContent));
+            }
+        };
         add(toCreateToDoLink);
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage", ConfigurationToDoPage.class);
         add(toConfigurationToDoLink);
@@ -54,38 +65,28 @@ public class ToDoListPage extends WebPage {
         toCreateToDoForm.add(new Button("toCreateToDoButton"){
             @Override
             public void onSubmit(){
-                setResponsePage(new CreateToDoPage());
+                Date limitDate = new Date();
+                String limitHour = "0";
+                String limitMinute = "0";
+                String todoType = "その他";
+                String reportBoxName = "";
+                String reportBoxContent = "";
+                setResponsePage(new CreateToDoPage(limitDate,limitHour,limitMinute,todoType,reportBoxName,reportBoxContent));
+                //setResponsePage(new CreateToDoPage(limitDate));
             }
         });
-
-        /*var todoListForm = new Form<>("todoListForm");
-        add(todoListForm);*/
 
         WebMarkupContainer todoListWMC = new WebMarkupContainer("todoListWMC");
         todoListWMC.setOutputMarkupId(true);
         add(todoListWMC);
-        //var deleteCheckGroup = new CheckGroup("deleteCheckGroup");
-        //deleteToDoBulkForm.add(deleteCheckGroup);
-        //deleteCheckGroup.add(new CheckGroupSelector("groupselector"));
-        /** var deleteBulkCheckBox = new AjaxCheckBox("deleteBulkCheckBox",Model.of(Boolean.TRUE)){
-        @Override
-        public void onUpdate(AjaxRequestTarget target){
-        target.add(todoListWMC);
-        }
-        };*/
-        // Service からデータベースのユーザ一覧をもらい、Modelにする
-        // List型のモデルは Model.ofList(...) で作成する。
+
         var todoListModel = Model.ofList(toDoListPageService.selectToDoList());
-        //List型のモデルを表示する　ListView
         var todoLV = new ListView<>("todoList",todoListModel){
             @Override
             protected void populateItem(ListItem<ToDo> listItem) {
-                // List型のモデルから、 <li>...</li> ひとつ分に分けられたモデルを取り出す
-                var itemModel = listItem.getModel();
-                ToDo toDo = itemModel.getObject(); //元々のListの n 番目の要素
 
-                // インスタンスに入れ込まれたデータベースの検索結果を、列（＝フィールド変数）ごとにとりだして表示する
-                // add する先が listItem になることに注意。
+                var itemModel = listItem.getModel();
+                ToDo toDo = itemModel.getObject();
 
                 var todoNameModels = Model.of(toDo.getTodoName());
                 var toConfirmToDoPageLink = new Link<>("toConfirmToDoPage"){
@@ -113,9 +114,6 @@ public class ToDoListPage extends WebPage {
                     }
                 });
 
-                /*PopupSettings settings = new PopupSettings();
-                settings.setWindowName("_blank");
-                queue(new ExternalLink("deleteToDoButton", "http://google.com").setPopupSettings(settings));*/
                 var deleteToDoName = new Label("deleteToDoName",todoNameModels);
                 listItem.add(deleteToDoName);
                 var deleteToDoForm = new Form<>("deleteToDoForm");
@@ -145,9 +143,7 @@ public class ToDoListPage extends WebPage {
                 };
                 deleteToDoForm.add(ajaxButton);
                 listItem.add(deleteBulkCheckBox);
-                //if(deleteBulkCheckBox.getConvertedInput() == false){
-                //listItem.add(AttributeModifier.replace("class", "todoList2"));
-                //}
+
 
                 IModel<String> cssModel = new IModel<String>() {
                     @Override
@@ -156,13 +152,6 @@ public class ToDoListPage extends WebPage {
                     }
                 };
 
-                /**
-                 listItem.add(new AttributeModifier("style", new IModel<String>({
-                    @Override
-                    public String getObject(){
-                        return listItem.getModelObject().getChecked() ? "background-color: #f0ffeb" : "background-color: #ffffff";
-                    }
-                }));*/
 
                 listItem.add(new AttributeModifier("style",cssModel));
 
@@ -226,20 +215,5 @@ public class ToDoListPage extends WebPage {
         };
         deleteToDoBulkForm.add(checkButton);
         checkButton.setOutputMarkupPlaceholderTag(true);
-/**
- var editToDoForm = new Form<>("editToDoForm");
- add(editToDoForm);
- editToDoForm.add(new Button("toEditToDoButton"){
-@Override
-public void onSubmit(){
-setResponsePage(new EditToDoPage());
-}
-});
- editToDoForm.add(new Button("deleteToDoButton"){
-@Override
-public void onSubmit(){
-//削除の処理頑張ってね！！！！！！！！
-}
-});*/
     }
 }

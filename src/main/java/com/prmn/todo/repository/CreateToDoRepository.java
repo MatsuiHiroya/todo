@@ -6,6 +6,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,12 @@ public class CreateToDoRepository implements ICreateToDoRepository{
     public List<ReportBox> selectReportBox(long lectureTimeId){
         String sql = "select * from REPORT_BOX where LECTURE_TIME_ID = ?";
         return  jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ReportBox.class),lectureTimeId);
+    }
+
+    @Override
+    public void insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String type){
+        String sql = "insert into TODO(todo_name, todo_content, limit_time, account_id, type) values(?,?,?,?,?)";
+        jdbcTemplate.update(sql,todoName,todoContent,limit,accountId,type);
     }
 
     /**

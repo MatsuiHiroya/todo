@@ -66,7 +66,7 @@
 
                                 <!--form id="id77" method="post"
                                       action="../ihGs9iKRFvDIz-NoZc8mh_edZsOrlVwRR5gXITLZT5rCIkcoxzAFF6Y6Hu5Fev2HAR-Q2XHTN8c/ihG97"-->
-                                <form>
+                                <form wicket:id="submitToDoForm">
                                     <div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"
                                          class="hidden-fields"><input type="hidden" name="id77_hf_0" id="id77_hf_0">
                                     </div>
@@ -74,7 +74,7 @@
                                         <div class="attention" id="id79">
 
                                         </div>
-                                        <button type="submit" class="btn" name="nextButton" id="id78">≫ 作成</button>
+                                        <button type="submit" class="btn" wicket:id="submitToDo">≫ 作成</button>
                                         <button type="button" onclick="history.back();" class="btn">キャンセル</button>
 
                                         <a class="deleteToDo">
@@ -87,6 +87,8 @@
                                     <!--一回Form閉じるよ-->
                                 </form>
 
+                                <!--div wicket:id="WMC"-->
+
                                     <!--li wicket:id="createToDoListView"-->
                                     <li>
 
@@ -97,6 +99,7 @@
 
                                             <table class="orig" cellpadding="0" cellspacing="0" border="0">
                                                 <tbody>
+
                                                 <form wicket:id="createToDoForm">
 
                                                 <tr class="simpleConfig">
@@ -125,47 +128,9 @@
                                                     <td class="orig">
                                                         <input type="text" wicket:id="date" class="scheduleDate"/>
 
-                                                        <select class="scheduleHour">
-                                                            <option selected="selected" value="0">0</option>
-                                                            <option value="1">1</option>
-                                                            <option value="2">2</option>
-                                                            <option value="3">3</option>
-                                                            <option value="4">4</option>
-                                                            <option value="5">5</option>
-                                                            <option value="6">6</option>
-                                                            <option value="7">7</option>
-                                                            <option value="8">8</option>
-                                                            <option value="9">9</option>
-                                                            <option value="10">10</option>
-                                                            <option value="11">11</option>
-                                                            <option value="12">12</option>
-                                                            <option value="13">13</option>
-                                                            <option value="14">14</option>
-                                                            <option value="15">15</option>
-                                                            <option value="16">16</option>
-                                                            <option value="17">17</option>
-                                                            <option value="18">18</option>
-                                                            <option value="19">19</option>
-                                                            <option value="20">20</option>
-                                                            <option value="21">21</option>
-                                                            <option value="22">22</option>
-                                                            <option value="23">23</option>
-                                                        </select>
+                                                        <select wicket:id="limitHour" class="scheduleHour"></select>
                                                         時
-                                                        <select class="scheduleMinute">
-                                                            <option selected="selected" value="0">0</option>
-                                                            <option value="1">5</option>
-                                                            <option value="2">10</option>
-                                                            <option value="3">15</option>
-                                                            <option value="4">20</option>
-                                                            <option value="5">25</option>
-                                                            <option value="6">30</option>
-                                                            <option value="7">35</option>
-                                                            <option value="8">40</option>
-                                                            <option value="9">45</option>
-                                                            <option value="10">50</option>
-                                                            <option value="11">55</option>
-                                                        </select>
+                                                        <select wicket:id="limitMinute" class="scheduleMinute"></select>
                                                         分まで
                                                     </td>
                                                 </tr>
@@ -181,6 +146,7 @@
 
                                                         <input type="text" wicket:id="todoNameTextBox"size="48" value=""
                                                                class="todoName" maxlength="100">
+                                                        <button type="submit" class="btn" name="createToDoButton" wicket:id="b">削除</button>
 
                                                         <!--input type="text" wicket:id="todoNameTextBox"size="48" value=""
                                                                class="todoName" maxlength="100"-->
@@ -199,6 +165,7 @@
                                                     </td>
                                                 </tr>
                                                 </form>
+
                                                 <!--form wicket:id="dateForm">
                                                     <input type="text" wicket:id="dateTextField">
                                                     <button type="submit" wicket:id="dateButton"></button>
@@ -209,6 +176,7 @@
                                         </div>
 
                                     </li>
+
                                 <span wicket:id="feedBack"></span>
 
 

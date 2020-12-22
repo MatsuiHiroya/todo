@@ -1,8 +1,9 @@
 package com.prmn.todo.bean;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class ReportBox {
+public class ReportBox implements Serializable {
     private long id;
     private long lectureTimeId;
     private String boxName;
