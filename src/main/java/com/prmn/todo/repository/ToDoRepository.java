@@ -23,7 +23,7 @@ public class ToDoRepository implements IToDoRepository{
 
     @Override
     public List<ToDo> selectToDoList(String accountId){
-        String sql = "select * from TODO where ACCOUNT_ID = ?";
+        String sql = "select * from TODO where ACCOUNT_ID = ? order by limit_time asc";
         List<ToDo> toDoList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),accountId);
         return toDoList;
     }

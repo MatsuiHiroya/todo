@@ -18,5 +18,5 @@ public interface ICreateToDoRepository {
 
     public List<LectureTime> selectLectureTime(String lectureId);
 
-    public void insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String type);
+    public boolean insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String type);
 }

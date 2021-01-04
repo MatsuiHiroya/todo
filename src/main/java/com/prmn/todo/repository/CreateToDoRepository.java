@@ -45,17 +45,22 @@ public class CreateToDoRepository implements ICreateToDoRepository{
     }
 
     @Override
-    public void insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String types){
+    public boolean insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String types){
         String sql = "insert into TODO(todo_name, todo_content, limit_time, account_id, type) values(?,?,?,?,?)";
         //重複がなければ登録
-        if(selectToDo(todoName,todoContent,limit,accountId,types))jdbcTemplate.update(sql,todoName,todoContent,limit,accountId,types);
+        if(selectToDo(todoName,todoContent,limit,accountId,types)){
+            jdbcTemplate.update(sql,todoName,todoContent,limit,accountId,types);
+            //登録出来たらtrueを返す
+            return true;
+        }
+        return false;
     }
 
     private boolean selectToDo(String todoName, String todoContent, Timestamp limit, String accountId, String types){
-        String sql = "select * from TODO where (?,?,?,?,?)";
-        //var todoList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),todoName,todoContent,limit,accountId,types);
+        String sql = "select * from TODO where todo_name = ? and todo_content = ? and limit_time = ? and account_id = ? and type = ?";
+        var todoList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),todoName,todoContent,limit,accountId,types);
         //DB内に同じ内容がない場合trueを返す
-        //if(todoList==null) return true;
+        if(todoList.size()==0) return true;
         return false;
     }
 

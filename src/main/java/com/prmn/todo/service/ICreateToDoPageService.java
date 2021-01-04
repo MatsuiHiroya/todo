@@ -17,5 +17,5 @@ public interface ICreateToDoPageService {
 
     public List<ReportBox> selectReportBox(long lectureTimeId);
 
-    public void insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String type);
+    public boolean insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String type);
 }

@@ -143,7 +143,8 @@ public class CreateToDoPage extends WebPage {
             protected void onUpdate(AjaxRequestTarget target) {
 
                 //reportBoxDropdown.clear();
-                //lectureTimeDropdown.clear();
+                lectureTimeDropdown.clear();
+                lectureTimeDropdown.add("講義名を選択");
 
                 lectureInfoList.stream()
                         .filter(lectureInfo -> lectureInfo.getLectureName().equals(dropDownChoice1.getModelObject()))
@@ -157,7 +158,6 @@ public class CreateToDoPage extends WebPage {
                 //dropDownChoice2.setChoices(lectureTimeDropdown);
                 //dropDownChoice3.setChoices(reportBoxDropdown);
                 //target.add(dropDownChoice2,dropDownChoice3);
-
 
                 target.add(dropDownChoice2);
             }
@@ -173,7 +173,6 @@ public class CreateToDoPage extends WebPage {
         dropDownChoice2.add(new AjaxFormComponentUpdatingBehavior("change"){
             protected void onUpdate(AjaxRequestTarget target) {
                 reportBoxDropdown.clear();
-
 
                 lectureInfoList.stream()
                         .filter(lectureInfo -> lectureInfo.getLectureName().equals(dropDownChoice1.getModelObject()))
@@ -288,8 +287,9 @@ public class CreateToDoPage extends WebPage {
                 String limit = limitDateToString + " " + limitHourDropDown.getModelObject() + ":" + limitMinuteDropDown.getModelObject() + ":00";
                 try {
                     Timestamp ts = new Timestamp(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse(limit).getTime());
-                    createToDoPageService.insertToDo(todoNameText.getModelObject().toString(),todoContentText.getModelObject(),ts,"b2182290",todoTypeDropDown.getModelObject().toString());
-                    target.appendJavaScript("alert('登録しました');");
+                    var flag = createToDoPageService.insertToDo(todoNameText.getModelObject().toString(),todoContentText.getModelObject(),ts,"b2182290",todoTypeDropDown.getModelObject().toString());
+                    if(flag==false) target.appendJavaScript("alert('その内容は既に存在します');");
+                    else target.appendJavaScript("alert('登録しました');");
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

@@ -52,8 +52,8 @@ public class CreateToDoPageService implements ICreateToDoPageService{
     }
 
     @Override
-    public void insertToDo(String todoName, String todoContent, Timestamp limit,String accountId,String type){
-        createToDoRepository.insertToDo(todoName,todoContent,limit,accountId,type);
+    public boolean insertToDo(String todoName, String todoContent, Timestamp limit,String accountId,String type){
+        return createToDoRepository.insertToDo(todoName,todoContent,limit,accountId,type);
     }
 
 }
