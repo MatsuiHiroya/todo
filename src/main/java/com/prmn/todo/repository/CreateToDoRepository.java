@@ -45,10 +45,20 @@ public class CreateToDoRepository implements ICreateToDoRepository{
     }
 
     @Override
-    public void insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String type){
+    public void insertToDo(String todoName, String todoContent, Timestamp limit, String accountId, String types){
         String sql = "insert into TODO(todo_name, todo_content, limit_time, account_id, type) values(?,?,?,?,?)";
-        jdbcTemplate.update(sql,todoName,todoContent,limit,accountId,type);
+        //重複がなければ登録
+        if(selectToDo(todoName,todoContent,limit,accountId,types))jdbcTemplate.update(sql,todoName,todoContent,limit,accountId,types);
     }
+
+    private boolean selectToDo(String todoName, String todoContent, Timestamp limit, String accountId, String types){
+        String sql = "select * from TODO where (?,?,?,?,?)";
+        //var todoList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),todoName,todoContent,limit,accountId,types);
+        //DB内に同じ内容がない場合trueを返す
+        //if(todoList==null) return true;
+        return false;
+    }
+
 
     /**
     @Override

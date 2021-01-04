@@ -8,14 +8,11 @@ import org.apache.wicket.ajax.AjaxEventBehavior;
 import org.apache.wicket.ajax.AjaxRequestTarget;
 import org.apache.wicket.ajax.form.OnChangeAjaxBehavior;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
-import org.apache.wicket.ajax.markup.html.form.AjaxCheckBox;
 import org.apache.wicket.extensions.markup.html.form.DateTextField;
-import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.form.*;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.panel.FeedbackPanel;
-import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
@@ -61,25 +58,31 @@ public class CreateToDoPage extends WebPage {
         add(toToDoListLink);
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage",ConfigurationToDoPage.class);
         add(toConfigurationToDoLink);
+        var cancelButton = new Button("cancel"){
+            @Override
+            public void onSubmit(){
+                setResponsePage(ToDoListPage.class);
+            }
+        };
 
-        IModel dateModel = Model.of(limitDate);
-        DateTextField date = new DateTextField("date", dateModel);
+        //var dateModel = Model.of(limitDate);
+        DateTextField date = new DateTextField("date",  Model.of(limitDate));
 
 
         List<String> limitHourList = new ArrayList<>();
         for(int i=0;i<24;i++)limitHourList.add(Integer.toString(i));
         List<String> limitMinuteList = new ArrayList<>();
         for(int i=0;i<60;i+=5)limitMinuteList.add(Integer.toString(i));
-        var limitHourModel = new Model<>(limitHour);
-        var limitMinuteModel = new Model<>(limitMinute);
-        var limitHourDropDown = new DropDownChoice<>("limitHour",limitHourModel,limitHourList);
+        //var limitHourModel = new Model<>(limitHour);
+        //var limitMinuteModel = new Model<>(limitMinute);
+        var limitHourDropDown = new DropDownChoice<>("limitHour",new Model<>(limitHour),limitHourList);
         limitHourDropDown.setOutputMarkupId(true);
-        var limitMinuteDropDown = new DropDownChoice<>("limitMinute",limitMinuteModel,limitMinuteList);
+        var limitMinuteDropDown = new DropDownChoice<>("limitMinute",new Model<>(limitMinute),limitMinuteList);
         limitMinuteDropDown.setOutputMarkupId(true);
 
-        IModel todoTypeModel = Model.of(todoType);
+        //IModel todoTypeModel = Model.of(todoType);
         List<String> todoTypeList = Arrays.asList("講義","レポートボックス","その他");
-        var todoTypeDropDown = new DropDownChoice<>("todoTypeDropdown",todoTypeModel ,todoTypeList);
+        var todoTypeDropDown = new DropDownChoice<>("todoTypeDropdown",Model.of(todoType) ,todoTypeList);
         todoTypeDropDown.setOutputMarkupId(true);
 
         var textModel = Model.of(reportBoxName);
@@ -117,6 +120,7 @@ public class CreateToDoPage extends WebPage {
             }
         };
         add(createToDoForm);
+        createToDoForm.add(cancelButton);
 
         List<String> lectureNameDropdown = new ArrayList<>(){};
         List<LectureInfo> lectureInfoList= createToDoPageService.selectLectureInfo("b2182290");
@@ -129,23 +133,23 @@ public class CreateToDoPage extends WebPage {
         List<String> reportBoxDropdown = new ArrayList<>(){};
         reportBoxDropdown.add("講義名を選択");
 
-        DropDownChoice dropDownChoice1 = new DropDownChoice<>("lectureNameDropdown", new Model<>(),lectureNameDropdown);
-        DropDownChoice dropDownChoice2 = new DropDownChoice<>("lectureTimeDropdown", new Model<>("講義名を選択"),lectureTimeDropdown);
-        DropDownChoice dropDownChoice3 = new DropDownChoice<>("reportBoxDropdown", new Model<>("講義名を選択"),reportBoxDropdown);
+        var dropDownChoice1 = new DropDownChoice<>("lectureNameDropdown", new Model<>(),lectureNameDropdown);
+        var dropDownChoice2 = new DropDownChoice<>("lectureTimeDropdown", new Model<>("講義名を選択"),lectureTimeDropdown);
+        var dropDownChoice3 = new DropDownChoice<>("reportBoxDropdown", new Model<>("講義名を選択"),reportBoxDropdown);
         dropDownChoice2.setOutputMarkupId(true);
         dropDownChoice3.setOutputMarkupId(true);
 
         dropDownChoice1.add(new AjaxFormComponentUpdatingBehavior("change"){
             protected void onUpdate(AjaxRequestTarget target) {
 
-                lectureTimeDropdown.clear();
                 //reportBoxDropdown.clear();
+                //lectureTimeDropdown.clear();
 
                 lectureInfoList.stream()
                         .filter(lectureInfo -> lectureInfo.getLectureName().equals(dropDownChoice1.getModelObject()))
                         .forEach(lectureInfo -> {
                             List<LectureTime> lectureTimeList = createToDoPageService.selectLectureTime(lectureInfo.getId());
-                            lectureTimeList.stream().forEach(lectureTime ->
+                            lectureTimeList.forEach(lectureTime ->
                                 lectureTimeDropdown.add(lectureTime.getTimes())
                             );
                         });
@@ -153,12 +157,14 @@ public class CreateToDoPage extends WebPage {
                 //dropDownChoice2.setChoices(lectureTimeDropdown);
                 //dropDownChoice3.setChoices(reportBoxDropdown);
                 //target.add(dropDownChoice2,dropDownChoice3);
+
+
                 target.add(dropDownChoice2);
             }
         });
 
 
-        this.add(new FeedbackPanel("feedBack"));
+        createToDoForm.add(new FeedbackPanel("feedBack"));
         createToDoForm.add(date);
         date.add(new DatePicker());
         date.setOutputMarkupId(true);
@@ -167,6 +173,7 @@ public class CreateToDoPage extends WebPage {
         dropDownChoice2.add(new AjaxFormComponentUpdatingBehavior("change"){
             protected void onUpdate(AjaxRequestTarget target) {
                 reportBoxDropdown.clear();
+
 
                 lectureInfoList.stream()
                         .filter(lectureInfo -> lectureInfo.getLectureName().equals(dropDownChoice1.getModelObject()))
@@ -190,7 +197,8 @@ public class CreateToDoPage extends WebPage {
                         });
 
                 //dropDownChoice3.setChoices(reportBoxDropdown)
-                target.add(dropDownChoice3,date);
+                if(lectureTimeDropdown.get(0).equals("講義名を選択"))lectureTimeDropdown.remove(0);
+                target.add(dropDownChoice2, dropDownChoice3);
             }
         });
         createToDoForm.add(dropDownChoice1);
@@ -220,18 +228,19 @@ public class CreateToDoPage extends WebPage {
         var updateButton = new AjaxButton("update"){
             @Override
             public void onSubmit(AjaxRequestTarget target){
-                modelChanging();
-                dateModel.setObject(limitDate);
-                limitHourModel.setObject(limitHour);
-                limitMinuteModel.setObject(limitMinute);
+               // modelChanging();
+                //dateModel.setObject(limitDate);
+                //limitHourModel.setObject(limitHour);
+                //limitMinuteModel.setObject(limitMinute);
                 textModel.setObject(reportBoxName);
                 contentModel.setObject(reportBoxContent);
-                todoTypeModel.setObject("レポートボックス");
-                modelChanged();
+                //todoTypeModel.setObject("レポートボックス");
+               // modelChanged();
 
                 //target.add(date,todoContentText,todoNameText,todoTypeDropDown,wmc,limitMinuteDropDown);
                 //todoContentText,todoNameText,todoTypeDropDown,wmc,limitMinuteDropDown
-                target.appendJavaScript("alert('date.getModelObject()');");
+                //target.appendJavaScript("alert('date.getModelObject()');");
+                target.appendJavaScript("alert('update complete!');");
 
                 System.out.println("-----------");
                 System.out.println(todoContentText.getModelObject());
@@ -270,56 +279,23 @@ public class CreateToDoPage extends WebPage {
         }
 
 
-        var b = new Button("b"){
-            @Override
-            public void onSubmit(){
 
-                System.out.println(date.getModelObject());
-                System.out.println(todoNameText.getModelObject());
-                System.out.println("b");
-                System.out.println(todoContentText.getModelObject());
-                System.out.println(todoTypeDropDown.getModelObject());
+        var submitToDoButton = new AjaxButton("submitToDo"){
+            @Override
+            public void onSubmit(AjaxRequestTarget target){
                 String limitDateToString = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(date.getModelObject()).substring(0,10);
                 System.out.println(limitDateToString);
                 String limit = limitDateToString + " " + limitHourDropDown.getModelObject() + ":" + limitMinuteDropDown.getModelObject() + ":00";
                 try {
                     Timestamp ts = new Timestamp(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse(limit).getTime());
-                    System.out.println(ts);
                     createToDoPageService.insertToDo(todoNameText.getModelObject().toString(),todoContentText.getModelObject(),ts,"b2182290",todoTypeDropDown.getModelObject().toString());
+                    target.appendJavaScript("alert('登録しました');");
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
-
             }
         };
-        createToDoForm.add(b);
-
-
-
-        var submitToDoForm = new Form<>("submitToDoForm");
-        add(submitToDoForm);
-        var submitToDoButton = new Button("submitToDo"){
-            @Override
-            public void onSubmit(){
-                /*
-                System.out.println("a");
-                System.out.println(todoNameText.getModelObject());
-                System.out.println("b");
-                System.out.println(todoContentText.getModelObject());
-                System.out.println(todoTypeDropDown.getModelObject());
-                String limitDateToString = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(limitDate).substring(0,10);
-                System.out.println(limitDateToString);
-                String limit = limitDateToString + " " + limitHourDropDown.getModelObject() + ":" + limitMinuteDropDown.getModelObject() + ":00";
-                try {
-                    Timestamp ts = new Timestamp(new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").parse(limit).getTime());
-                    System.out.println(ts);
-                    createToDoPageService.insertToDo(todoNameText.getModelObject(),todoContentText.getModelObject(),ts,"b2182290",todoTypeDropDown.getModelObject());
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }*/
-            }
-        };
-        submitToDoForm.add(submitToDoButton);
+        createToDoForm.add(submitToDoButton);
 
     }
 }

@@ -66,7 +66,7 @@
 
                                 <!--form id="id77" method="post"
                                       action="../ihGs9iKRFvDIz-NoZc8mh_edZsOrlVwRR5gXITLZT5rCIkcoxzAFF6Y6Hu5Fev2HAR-Q2XHTN8c/ihG97"-->
-                                <form wicket:id="submitToDoForm">
+                                <form wicket:id="createToDoForm">
                                     <div style="width:0px;height:0px;position:absolute;left:-100px;top:-100px;overflow:hidden"
                                          class="hidden-fields"><input type="hidden" name="id77_hf_0" id="id77_hf_0">
                                     </div>
@@ -75,7 +75,7 @@
 
                                         </div>
                                         <button type="submit" class="btn" wicket:id="submitToDo">≫ 作成</button>
-                                        <button type="button" onclick="history.back();" class="btn">キャンセル</button>
+                                        <button type="button" class="btn" wicket:id="cancel">キャンセル</button>
 
                                         <a class="deleteToDo">
                                             <button type="submit" class="btn" name="createToDoButton">削除
@@ -85,7 +85,7 @@
 
                                     </div>
                                     <!--一回Form閉じるよ-->
-                                </form>
+                                <!--/form-->
 
                                 <!--div wicket:id="WMC"-->
 
@@ -100,7 +100,7 @@
                                             <table class="orig" cellpadding="0" cellspacing="0" border="0">
                                                 <tbody>
 
-                                                <form wicket:id="createToDoForm">
+                                                <!--form wicket:id="createToDoForm"-->
 
                                                 <tr class="simpleConfig">
                                                     <th class="orig">簡易設定</th>
@@ -146,7 +146,6 @@
 
                                                         <input type="text" wicket:id="todoNameTextBox"size="48" value=""
                                                                class="todoName" maxlength="100">
-                                                        <button type="submit" class="btn" name="createToDoButton" wicket:id="b">削除</button>
 
                                                         <!--input type="text" wicket:id="todoNameTextBox"size="48" value=""
                                                                class="todoName" maxlength="100"-->
@@ -164,7 +163,7 @@
 
                                                     </td>
                                                 </tr>
-                                                </form>
+                                                <!--/form-->
 
                                                 <!--form wicket:id="dateForm">
                                                     <input type="text" wicket:id="dateTextField">
@@ -175,9 +174,9 @@
                                             </table>
                                         </div>
 
-                                    </li>
 
-                                <span wicket:id="feedBack"></span>
+                                    <span wicket:id="feedBack"></span>
+                                    </li>
 
 
                                     <div class="squarePoints"></div>
@@ -189,7 +188,7 @@
                                     </div>
                                     <div class="squarePoints"></div>
                                     <div class="squarePoints"></div>
-                                <!--/form-->
+                                </form>
                             </div>
 
                         </div>

@@ -1,35 +1,24 @@
 package com.prmn.todo.page;
 import com.prmn.todo.bean.ToDo;
 import com.prmn.todo.service.IToDoListPageService;
-import com.prmn.todo.service.IToDoPageService;
-import com.prmn.todo.service.ToDoListPageService;
 import org.apache.wicket.AttributeModifier;
 import org.apache.wicket.ajax.AjaxRequestTarget;
-import org.apache.wicket.ajax.markup.html.AjaxLink;
 import org.apache.wicket.ajax.markup.html.form.AjaxButton;
 import org.apache.wicket.ajax.markup.html.form.AjaxCheckBox;
-import org.apache.wicket.behavior.AttributeAppender;
-import org.apache.wicket.markup.html.TransparentWebMarkupContainer;
 import org.apache.wicket.markup.html.WebMarkupContainer;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.*;
 import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
-import org.apache.wicket.markup.html.link.ExternalLink;
 import org.apache.wicket.markup.html.link.Link;
-import org.apache.wicket.markup.html.link.PopupSettings;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
-import org.apache.wicket.model.AbstractReadOnlyModel;
 import org.apache.wicket.model.IModel;
 import org.apache.wicket.model.Model;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.wicketstuff.annotation.mount.MountPath;
-import javax.swing.*;
-import java.awt.*;
 import java.util.*;
-import java.util.List;
 
 @MountPath("ToDoList")
 public class ToDoListPage extends WebPage {
@@ -72,7 +61,6 @@ public class ToDoListPage extends WebPage {
                 String reportBoxName = "";
                 String reportBoxContent = "";
                 setResponsePage(new CreateToDoPage(limitDate,limitHour,limitMinute,todoType,reportBoxName,reportBoxContent));
-                //setResponsePage(new CreateToDoPage(limitDate));
             }
         });
 
@@ -120,7 +108,7 @@ public class ToDoListPage extends WebPage {
                 listItem.add(deleteToDoForm);
                 //listItem.add(new Check("deleteBulkCheckBox", listItem.getModel()));
                 //deleteBulkCheckBox = new AjaxCheckBox("deleteBulkCheckBox",Model.of(Boolean.FALSE)){
-                deleteBulkCheckBox = new AjaxCheckBox("deleteBulkCheckBox",new Model<Boolean>(toDo.getChecked())){
+                deleteBulkCheckBox = new AjaxCheckBox("deleteBulkCheckBox",new Model<>(toDo.getChecked())){
                     @Override
                     public void onUpdate(AjaxRequestTarget target){
                         toDo.setChecked(this.getModelObject());
@@ -145,7 +133,7 @@ public class ToDoListPage extends WebPage {
                 listItem.add(deleteBulkCheckBox);
 
 
-                IModel<String> cssModel = new IModel<String>() {
+                var cssModel = new IModel<String>() {
                     @Override
                     public String getObject() {
                         return listItem.getModelObject().getChecked() ? "background-color: #f0ffeb" : "background-color: #ffffff";

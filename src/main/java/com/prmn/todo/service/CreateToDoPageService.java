@@ -38,10 +38,6 @@ public class CreateToDoPageService implements ICreateToDoPageService{
             LectureInfo lectureInformation = createToDoRepository.selectLectureInfo(s).get(0);
             lectureInformationList.add(lectureInformation);}
             );
-        /*for (String lectureId : selectCreditStatus(accountId)){
-            LectureInfo lectureInformation = createToDoRepository.selectLectureInfo(lectureId).get(0);
-            lectureInformationList.add(lectureInformation);
-        }*/
         return lectureInformationList;
     }
 
@@ -55,7 +51,7 @@ public class CreateToDoPageService implements ICreateToDoPageService{
         return createToDoRepository.selectReportBox(lectureTimeId);
     }
 
-    @Order
+    @Override
     public void insertToDo(String todoName, String todoContent, Timestamp limit,String accountId,String type){
         createToDoRepository.insertToDo(todoName,todoContent,limit,accountId,type);
     }
