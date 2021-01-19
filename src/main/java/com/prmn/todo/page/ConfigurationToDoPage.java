@@ -43,7 +43,7 @@ public class ConfigurationToDoPage extends WebPage {
         };
         add(toCreateToDoLink);
 
-        List<Notice> toDoConfigList = configurationToDoPageService.selectToDoConfig("b2182330"/**accountId**/);
+        List<Notice> toDoConfigList = configurationToDoPageService.selectToDoConfig("b2182290"/**accountId**/);
 
         List<String> toDoConfigDropdown = new ArrayList<>(){};
         toDoConfigDropdown.addAll(Arrays.asList("1日前","2日前","3日前","4日前","5日前","6日前","7日前"));
@@ -65,7 +65,7 @@ public class ConfigurationToDoPage extends WebPage {
                     toDoConfigFrag = false;
                 }
 
-                configurationToDoPageService.updateToDoConfig(toDoConfigFrag, parseInt(DropdownChoice.getModelObject().substring(0,1)), "b2182330"/**accountId**/);
+                configurationToDoPageService.updateToDoConfig(toDoConfigFrag, parseInt(DropdownChoice.getModelObject().substring(0,1)), "b2182290"/**accountId**/);
 
                 setResponsePage(ToDoListPage.class);
             }

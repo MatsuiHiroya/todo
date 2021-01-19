@@ -30,7 +30,7 @@ public class ConfirmToDoPage extends WebPage {
     @SpringBean
     private IConfirmToDoPageService confirmToDoPageService;
 
-    public ConfirmToDoPage() {
+    public ConfirmToDoPage(long todoId,String accountId) {
         //ヘッダーのボタンからTopPageへの移動
         var toTopLink = new BookmarkablePageLink<>("toTopPage", TopPage.class);
         add(toTopLink);
@@ -57,7 +57,7 @@ public class ConfirmToDoPage extends WebPage {
 
 
         //ToDoの詳細をDBから持ってくる
-        var confirmToDoModel = Model.ofList(confirmToDoPageService.getConfirmToDo(373, "b2181740"));
+        var confirmToDoModel = Model.ofList(confirmToDoPageService.getConfirmToDo(todoId,accountId));
 
         //ToDoの詳細を表示する
         var toDoConfirm = new ListView<>("confirmToDoView", confirmToDoModel) {
@@ -107,7 +107,7 @@ public class ConfirmToDoPage extends WebPage {
             @Override
             public void onSubmit(AjaxRequestTarget target){
                 super.onSubmit(target);
-                confirmToDoPageService.DeleteConfirmToDo(373, "b2181740");
+                confirmToDoPageService.DeleteConfirmToDo(todoId,accountId);
                 setResponsePage(new ToDoListPage());
             }
         };

@@ -80,7 +80,7 @@ public class ToDoListPage extends WebPage {
                 var toConfirmToDoPageLink = new Link<>("toConfirmToDoPage"){
                     @Override
                     public void onClick(){
-                        setResponsePage(new ConfirmToDoPage(/*toDo.getId(),toDo.getAccountId()*/));
+                        setResponsePage(new ConfirmToDoPage(toDo.getId(),toDo.getAccountId()));
                     }
                 };
                 var todoNameLabels = new Label("todoNames",todoNameModels);
@@ -140,7 +140,6 @@ public class ToDoListPage extends WebPage {
                     }
                 };
 
-
                 listItem.add(new AttributeModifier("style",cssModel));
 
             }
@@ -159,6 +158,7 @@ public class ToDoListPage extends WebPage {
                 deleteToDoBulkButton.setVisible(false);
                 checkButton.setVisible(true);
                 isView = false;
+
                 //deleteBulkCheckBox.setVisible(false);
                 target.add(todoListWMC,deleteBulkFormWMC);
             }
