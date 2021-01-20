@@ -58,12 +58,12 @@
                 <div class="span9 w95p_print">
                     <div class="content">
                         <h3 class="mainttl2">
-                            あなたの月間予定
+                            あなたのToDo
                         </h3>
                         <div class="panel_bottom_bg">
                             <div class="panel schedule">
                                 <p class="ttl">
-                                    あなたの予定を１ヶ月づつ表示します。新しい予定を追加したい時は、日付をクリックしてください。
+                                    あなたのToDoリストを表示します。期限が切れたToDoは表示されません。
                                 </p>
                                 <div class="panelBody">
                                     <!--form-- wicket:id="todoListForm"-->
@@ -91,7 +91,7 @@
 
                                             <form wicket:id="toCreateToDoForm" class = "toCreateTodo">
                                                 <button wicket:id="toCreateToDoButton" class="btn">
-                                                    <a style="top: 35px">追加</a>
+                                                    <a style="top: 35px">新規作成</a>
                                                     <wicket:link>
                                                         <img src="images/plus_symbol.png">
                                                     </wicket:link>
@@ -156,7 +156,7 @@
                                                             <input type="checkbox" name="checkbox" class="btn">
                                                             <div id="popup" class="deleteConfirm">
                                                                 <span wicket:id="deleteToDoName"></span><br>
-                                                                <span>この予定を削除しますか？</span><br>
+                                                                <span>このToDoを削除しますか？</span><br>
                                                                 <form wicket:id="deleteToDoForm">
                                                                     <a type="submit" wicket:id="deleteToDoButton"
                                                                        class="btn">

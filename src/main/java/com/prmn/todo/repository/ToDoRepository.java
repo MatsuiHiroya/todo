@@ -23,8 +23,9 @@ public class ToDoRepository implements IToDoRepository{
 
     @Override
     public List<ToDo> selectToDoList(String accountId){
-        String sql = "select * from TODO where ACCOUNT_ID = ? order by limit_time asc";
-        List<ToDo> toDoList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),accountId);
+        LocalDateTime nowTime = LocalDateTime.now();
+        String sql = "select * from TODO where ACCOUNT_ID = ? and LIMIT_TIME >= ? order by limit_time asc";
+        List<ToDo> toDoList = jdbcTemplate.query(sql,new BeanPropertyRowMapper<>(ToDo.class),accountId,nowTime);
         return toDoList;
     }
 

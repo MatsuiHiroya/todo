@@ -58,12 +58,12 @@ public class CreateToDoPage extends WebPage {
         add(toToDoListLink);
         var toConfigurationToDoLink = new BookmarkablePageLink<>("toConfigurationToDoPage",ConfigurationToDoPage.class);
         add(toConfigurationToDoLink);
-        var cancelButton = new Button("cancel"){
+        /**var cancelButton = new Button("cancel"){
             @Override
             public void onSubmit(){
                 setResponsePage(ToDoListPage.class);
             }
-        };
+        };*/
 
         //var dateModel = Model.of(limitDate);
         DateTextField date = new DateTextField("date",  Model.of(limitDate));
@@ -120,7 +120,7 @@ public class CreateToDoPage extends WebPage {
             }
         };
         add(createToDoForm);
-        createToDoForm.add(cancelButton);
+        //createToDoForm.add(cancelButton);
 
         List<String> lectureNameDropdown = new ArrayList<>(){};
         List<LectureInfo> lectureInfoList= createToDoPageService.selectLectureInfo("b2182290");
@@ -292,6 +292,8 @@ public class CreateToDoPage extends WebPage {
                     else target.appendJavaScript("alert('登録しました');");
                 } catch (ParseException e) {
                     e.printStackTrace();
+                } catch (NullPointerException e){
+                    target.appendJavaScript("alert('入力内容に不備があります。正しく入力してください。');");
                 }
             }
         };
