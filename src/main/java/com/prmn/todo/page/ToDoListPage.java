@@ -139,6 +139,7 @@ public class ToDoListPage extends WebPage {
                         return listItem.getModelObject().getChecked() ? "background-color: #f0ffeb" : "background-color: #ffffff";
                     }
                 };
+                //cssModel.setObject("background-color: #a9a9a9");
 
                 listItem.add(new AttributeModifier("style",cssModel));
 
@@ -151,12 +152,43 @@ public class ToDoListPage extends WebPage {
         add(deleteBulkFormWMC);
         var deleteToDoBulkForm = new Form<>("deleteToDoBulkForm");
         deleteBulkFormWMC.add(deleteToDoBulkForm);
+
+
+        var allCheckButton = new AjaxButton("allCheck"){
+            @Override
+            public void onSubmit(AjaxRequestTarget target){
+                todoListModel.getObject().forEach(todolist ->{
+                            todolist.setChecked(true);
+                            checkedMap.put(todolist.getId(), todolist);
+                        });
+                target.add(todoListWMC);
+            }
+        };
+        deleteToDoBulkForm.add(allCheckButton);
+        allCheckButton.setOutputMarkupId(true);
+        allCheckButton.setVisible(false);
+        var allReleaseButton = new AjaxButton("allRelease"){
+            @Override
+            public void onSubmit(AjaxRequestTarget target){
+                todoListModel.getObject().forEach(todolist -> {
+                    todolist.setChecked(false);
+                    checkedMap.clear();
+                });
+                target.add(todoListWMC);
+            }
+        };
+        deleteToDoBulkForm.add(allReleaseButton);
+        allReleaseButton.setOutputMarkupId(true);
+        allReleaseButton.setVisible(false);
+
         var cancelButton = new AjaxButton("cancelButton"){
             @Override
             public void onSubmit(AjaxRequestTarget target){
                 this.setVisible(false);
                 deleteToDoBulkButton.setVisible(false);
                 checkButton.setVisible(true);
+                allCheckButton.setVisible(false);
+                allReleaseButton.setVisible(false);
                 isView = false;
 
                 //deleteBulkCheckBox.setVisible(false);
@@ -167,11 +199,14 @@ public class ToDoListPage extends WebPage {
         cancelButton.setOutputMarkupPlaceholderTag(true);
         cancelButton.setVisible(false);
 
+
         deleteToDoBulkButton = new AjaxButton("deleteToDoBulkButton"){
             @Override
             public void onSubmit(AjaxRequestTarget target){
                 super.onSubmit();
                 cancelButton.setVisible(false);
+                allCheckButton.setVisible(false);
+                allReleaseButton.setVisible(false);
                 this.setVisible(false);
                 checkButton.setVisible(true);
                 isView = false;
@@ -195,6 +230,8 @@ public class ToDoListPage extends WebPage {
                 super.onSubmit();
                 cancelButton.setVisible(true);
                 deleteToDoBulkButton.setVisible(true);
+                allCheckButton.setVisible(true);
+                allReleaseButton.setVisible(true);
                 this.setVisible(false);
                 //deleteBulkCheckBox.setVisible(true);
                 isView = true;
