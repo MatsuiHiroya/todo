@@ -112,6 +112,7 @@ h3 {
 div.content .panel_bottom_bg {
     padding: 0 0 6px 0;
     background: url(../images/main_panel_bg.jpg) repeat-x 0 bottom;
+    margin: 0 0 0 0;
 }
 
 div.content .panel.class {
@@ -120,7 +121,7 @@ div.content .panel.class {
 
 div.content .panel {
     margin: 0 0 0 0;
-    padding: 0 0 13px 0;
+    padding: 0 0 0px/*13px*/ 0;
     border: 1px solid #B8BCC7;
     border-top: none;
 }
@@ -317,4 +318,27 @@ div.content .panel.details .panelBody p {
 
 .content {
     min-width: 760px;
+}
+
+.panel details {
+    margin: 0em;
+    padding: 0px;
+}
+
+.configToDoList2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #5d627b;
+    padding: 0.25em 0 0 0.5em;
+}
+
+div.content .panel details {
+    padding-bottom: 0px;
+}
+
+.offMessage {
+    font-size: 15px;
+    font-weight: bold;
+    color: #5d627b;
+    padding: 0.25em 0.5em 0.25em 0.5em;
 }

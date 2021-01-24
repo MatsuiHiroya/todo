@@ -137,14 +137,17 @@
                                 <h3 class="mainttl2">ToDoの通知</h3>
                                 <div class="panel_bottom_bg">
                                     <div class="panel details">
-                                        <span wicket:id="evenBlock">
-                                            <list wicket:id="configToDoList">
-	                                            <span wicket:id="todoName"><p>ToDo名：</p></span>
-                                                <span wicket:id="todoLimitTime"><p>期限：</p></span>
+                                        <span wicket:id="evenBlock" class="evenBlock">
+                                            <list wicket:id="configToDoList" class="configToDoList">
+                                                <div class="configToDoList2">
+                                                    ToDo名：<span wicket:id="todoName"></span>
+                                                    期限：<span wicket:id="todoLimitTime"></span>
+                                                </div>
                                             </list>
+                                            <br>
                                         </span>
                                         <span wicket:id="oddBlock">
-                                            <span wicket:id="offMessage"></span>
+                                            <span wicket:id="offMessage" class="offMessage"></span>
                                         </span>
                                     </div>
                                 </div>
