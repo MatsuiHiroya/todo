@@ -74,7 +74,7 @@ button.btn, input[type="submit"].btn {
 #popup{
     width:30%;
     line-height:100px;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.6);
     padding:0 4%;
     box-sizing:border-box;
     display:none;
@@ -137,7 +137,7 @@ label{
 }
 
 .deleteConfirm span{
-    font-size: 18px;
+    font-size: 28px;
     color: white;
 }
 
